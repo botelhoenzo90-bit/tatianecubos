@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Tati Cubos — Podologia, Estética e Cosméticos" },
       { property: "og:description", content: "Cuidado especializado para a saúde e a beleza dos pés e da pele, com técnica, ciência e acolhimento." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:locale", content: "pt_BR" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#183f2f" },
@@ -142,7 +143,18 @@ function Index() {
         
       </section>
 
-      <section className="tc-marquee" aria-label="Informações sobre a profissional"><div className="tc-marquee-track"><span><span>Podologia desde 2018</span><i>✦</i><span>Biomedicina em 2025</span><i>✦</i><span>Atendimento humanizado</span><i>✦</i><span>Curitiba e região</span><i>✦</i><span><span>Podologia desde 2018</span><i>✦</i><span>Biomedicina em 2025</span><i>✦</i><span>Atendimento humanizado</span><i>✦</i><span>Curitiba e região</span><i>✦</i></div></section>
+      <section className="tc-marquee" aria-label="Informações sobre a profissional">
+        <div className="tc-marquee-track">
+          <span>Podologia desde 2018</span><i>✦</i>
+          <span>Biomedicina em 2025</span><i>✦</i>
+          <span>Atendimento humanizado</span><i>✦</i>
+          <span>Curitiba e região</span><i>✦</i>
+          <span>Podologia desde 2018</span><i>✦</i>
+          <span>Biomedicina em 2025</span><i>✦</i>
+          <span>Atendimento humanizado</span><i>✦</i>
+          <span>Curitiba e região</span><i>✦</i>
+        </div>
+      </section>
 
       <section className="tc-section tc-how" id="como-funciona"><div className="tc-wrap"><div className="tc-section-head tc-section-head-center"><span className="tc-kicker">COMO FUNCIONA</span><h2>Seu cuidado começa <em>com uma boa conversa.</em></h2><p>Um processo claro, acolhedor e pensado para entender o que você precisa.</p></div><div className="tc-how-grid"><article><span>01</span><h3>Você conta</h3><p>Fale sobre o que deseja cuidar, seus sintomas e suas expectativas.</p></article><article><span>02</span><h3>Avaliamos juntos</h3><p>A Tati entende seu caso, explica as opções e esclarece dúvidas.</p></article><article><span>03</span><h3>Plano individual</h3><p>Você recebe orientação sobre o atendimento indicado e os próximos cuidados.</p></article></div><Button variant="siteGold" size="site" onClick={() => book()}>Agendar uma conversa <ArrowRight size={17}/></Button></div></section>
 
