@@ -689,3 +689,17 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site .tc-footer a[href="#galeria"]{display:none}
 @media(max-width:850px){.tc-service-grid,.tc-aesthetic-card-list,.tc-how-grid{grid-template-columns:1fr!important}.tc-aesthetic-card{min-height:0}.tc-hero-proof{gap:8px}.tc-hero-proof>span{font-size:10px;padding:9px 12px}.tc-about-grid,.tc-products-grid,.tc-faq-layout,.tc-contact-grid{grid-template-columns:1fr!important}}
 @media(max-width:600px){.tc-hero{padding-top:28px}.tc-hero-copy{padding-bottom:30px!important}.tc-logo-placeholder{padding:20px 12px}.tc-logo-placeholder small{line-height:1.7}.tc-hero h1{font-size:40px}.tc-hero-proof{display:grid;grid-template-columns:1fr 1fr}.tc-hero-proof>span{border-radius:12px;line-height:1.4}.tc-whatsapp-float{width:58px!important;height:58px!important;min-width:58px!important}}
+
+/* A sequência principal começa diretamente por como funciona */
+.tc-site #especialidades{display:none!important}
+.tc-site #sobre .tc-about-visual{display:none!important}
+.tc-site #sobre .tc-about-copy{grid-column:1/-1;max-width:820px;margin:0 auto}
+.tc-site #sobre .tc-about-copy h2{max-width:740px}
+.tc-site #sobre .tc-about-copy p{max-width:720px}
+.tc-site #sobre .tc-about-copy .tc-values{display:flex;flex-wrap:wrap;gap:10px}
+.tc-site #estetica .tc-aesthetic-layout{grid-template-columns:1fr;gap:35px}
+.tc-site #estetica .tc-aesthetic-intro{max-width:800px;margin:0 auto}
+.tc-site #estetica .tc-aesthetic-image{display:none!important}
+.tc-site #estetica .tc-aesthetic-services{max-width:1100px;margin:0 auto}
+.tc-site #podologia .tc-section-head-row{display:flex;flex-direction:column;align-items:center;text-align:center}
+.tc-site #depoimentos .tc-review-controls{justify-content:center}
