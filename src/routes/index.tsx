@@ -1,365 +1,195 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Brain,
-  Check,
-  ChevronDown,
-  Clock3,
-  HeartHandshake,
-  Instagram,
-  MapPin,
-  MessageCircle,
-  Monitor,
-  ShieldCheck,
-  Sparkles,
-  Star,
-  UserRound,
-  Video,
-} from "lucide-react";
 import { useState } from "react";
+import {
+  ArrowDown, ArrowRight, Award, BadgeCheck, CalendarDays, Check, ChevronDown,
+  ChevronLeft, ChevronRight, Clock3, Footprints, Heart, HeartPulse, MapPin,
+  Menu, MessageCircle, Microscope, Package, Play, ShieldCheck, Sparkles, Star,
+  Stethoscope, Syringe, X
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
-import { clinicAddress, getClinicMapUrl } from "@/lib/clinic-location";
-import whatsappIcon from "@/assets/whatsapp.png.asset.json";
-import shareLogo from "@/assets/rozamato-compartilhamento.jpg.asset.json";
 
-const siteUrl = "https://herbstenrozamato.lovable.app";
-const shareUrl = new URL(shareLogo.url, siteUrl).href;
+const siteUrl = "https://tatianecubos.com.br";
+const whatsapp = "https://wa.me/5541999778493";
+const instagram = "https://www.instagram.com/podologa_tati.cubos/";
+const media = "/midia/";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Herbsten Rozamato Sousa | Psicanálise em Fortaleza, CE e online" },
-      { name: "description", content: "Psicanálise com Herbsten Rozamato Sousa em Fortaleza, CE e online. Atendimento individual para ansiedade, traumas e questões emocionais. Consulte horários." },
-      { property: "og:title", content: "Herbsten Rozamato Sousa | Psicanálise em Fortaleza, CE e online" },
-      { property: "og:description", content: "Conheça Herbsten Rozamato Sousa, psicanalista, Practitioner em PNL e hipnoterapeuta clínico. Atendimento online e presencial em Fortaleza, CE, com escuta individualizada e acolhimento." },
-      { name: "robots", content: "index, follow, max-image-preview:large" },
-      { name: "google-site-verification", content: "9myn0HdI7aGpUZnVvPyhIOqrxVOLgTJA9XtYO1VNmew" },
-      { property: "og:locale", content: "pt_BR" },
+      { title: "Tati Cubos | Podologia, Biomedicina Estética e Cosméticos em Curitiba" },
+      { name: "description", content: "Podologia especializada e cuidados estéticos com Tatiane Cubos. Mais de 18 anos de experiência, atendimento em Curitiba, São José dos Pinhais e Telêmaco Borba." },
+      { property: "og:title", content: "Tati Cubos — Podologia, Estética e Cosméticos" },
+      { property: "og:description", content: "Cuidado especializado para a saúde e a beleza dos pés e da pele, com técnica, ciência e acolhimento." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: siteUrl },
-      { property: "og:image", content: shareUrl },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Logomarca Rozamato Psicanalista" },
-      { name: "twitter:image", content: shareUrl },
+      { property: "og:locale", content: "pt_BR" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "theme-color", content: "#183f2f" },
     ],
     links: [{ rel: "canonical", href: siteUrl }],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: "Herbsten Rozamato Sousa — Psicanalista Clínico • Hipnoterapeuta", inLanguage: "pt-BR" },
-          {
-            "@type": "LocalBusiness", "@id": `${siteUrl}/#atendimento`,
-            name: "Herbsten Rozamato Sousa — Psicanalista Clínico • Hipnoterapeuta", url: siteUrl,
-            telephone: "+55 85 98620-7574",
-            description: "Atendimento online e presencial em Fortaleza, Ceará.",
-            address: {
-              "@type": "PostalAddress", streetAddress: clinicAddress.street,
-              addressLocality: "Fortaleza", addressRegion: "CE",
-              postalCode: clinicAddress.postalCode, addressCountry: "BR",
-            },
-          },
-        ],
-      }),
-    }],
   }),
   component: Index,
 });
 
-const whatsapp = "https://wa.me/5585986207574";
-const mapsBrowserKey = import.meta.env['VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY'];
-const clinicMapUrl = getClinicMapUrl(mapsBrowserKey);
-const presentationVideoUrl = "/midia/a981e190-2953-4856-8ad0-5b4c05548aa7%20%281%29.mp4?v=3";
-const approachVideoUrl = "/midia/d81da90a-ab8b-4161-909d-0640d3e7e2b1.mp4?v=3";
-const portraitUrl = "/midia/Retrato%20acolhedor%20de%20terapeuta%20em%20consult%C3%B3rio.png";
-const graduationUrl = "/midia/foto_formatura_iapb.png";
-const tijucaUrl = "/midia/foto_mercado_tijuca_alimentos.png";
-
-const issues = [
-  ["Crenças limitantes", "Reconheça ideias aprendidas ao longo da vida e observe como elas podem participar das suas decisões e relações."],
-  ["Ansiedade e preocupações", "Investigue suas preocupações com cuidado e desenvolva mais clareza sobre o que acontece no seu dia a dia."],
-  ["Medos e fobias", "Compreenda como medos e reações aparecem na sua rotina, no seu ritmo e sem julgamentos."],
-  ["Bloqueios emocionais", "Dê nome ao que sente e explore os padrões que parecem se repetir, com espaço para novas perspectivas."],
-  ["Traumas e experiências marcantes", "Fale sobre experiências marcantes com respeito à sua história, aos seus limites e ao seu tempo."],
-  ["Autoestima e insegurança", "Explore a imagem que construiu de si e como ela influencia sua segurança e seus relacionamentos."],
-  ["Procrastinação", "Observe os hábitos e as dificuldades que atrapalham seus planos e identifique o que merece atenção."],
-  ["Relacionamentos", "Entenda dinâmicas de relacionamento, comunicação, limites e necessidades emocionais."],
-  ["Compulsão alimentar", "Explore com responsabilidade a relação entre emoções, hábitos e comportamento alimentar."],
-  ["Prosperidade e objetivos", "Reflita sobre objetivos, expectativas e crenças pessoais sem promessas de ganhos ou resultados garantidos."],
+const podologyServices = [
+  { title: "Unhas encravadas", text: "Avaliação e manejo técnico da unha, com cuidado para aliviar o desconforto e orientar a prevenção de recorrências.", icon: Footprints },
+  { title: "Órtese ungueal", text: "Recurso aplicado quando indicado para auxiliar na correção da curvatura da unha e acompanhar seu crescimento.", icon: ShieldCheck },
+  { title: "Calos e calosidades", text: "Remoção técnica de áreas espessadas da pele, respeitando as condições e a sensibilidade de cada pé.", icon: HeartPulse },
+  { title: "Fissuras e rachaduras", text: "Cuidado especializado para calcanhares ressecados, com orientação para manter a pele hidratada.", icon: Sparkles },
+  { title: "Micose e frieiras", text: "Avaliação dos sinais nas unhas e na pele, com orientação e encaminhamento quando necessário.", icon: Microscope },
+  { title: "Pés diabéticos", text: "Atenção preventiva e cuidadosa, com avaliação dos riscos e condutas adequadas para cada pessoa.", icon: BadgeCheck },
+  { title: "Podologia infantil", text: "Atendimento paciente e acolhedor, respeitando o ritmo das crianças e suas necessidades.", icon: Heart },
+  { title: "Podologia geriátrica", text: "Cuidado atento à mobilidade, ao conforto e às necessidades dos pés na maturidade.", icon: Stethoscope },
+  { title: "Reconstrução de unhas", text: "Técnica estética aplicada após avaliação das condições da unha e da indicação para o caso.", icon: Sparkles },
+  { title: "Higienização e corte técnico", text: "Limpeza e corte adequados para manter as unhas e os pés bem cuidados.", icon: Check },
+  { title: "Hidratação profunda", text: "Cuidados para melhorar o ressecamento e preservar a maciez e a integridade da pele.", icon: HeartPulse },
+  { title: "Podologia preventiva", text: "Orientações e cuidados regulares para observar alterações e ajudar a evitar problemas recorrentes.", icon: ShieldCheck },
 ];
 
-const issueImages = [
-  {url:"https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=720&q=85"},
-  {url:"https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=720&q=85"}
+const aestheticServices = [
+  { title: "Skinbooster", text: "Procedimento injetável voltado à hidratação da pele e à melhora de sua qualidade, após avaliação individual.", icon: Sparkles },
+  { title: "Toxina botulínica", text: "Pode suavizar linhas de expressão em regiões específicas. A indicação depende de avaliação com profissional habilitado.", icon: Syringe },
+  { title: "Melasma e manchas", text: "Avaliação estética para entender os fatores envolvidos e definir opções de cuidado adequadas para a pele.", icon: Microscope },
+  { title: "Linhas finas e textura", text: "Plano individualizado para cuidar da textura, hidratação e aparência da pele, sem promessas de resultado.", icon: Heart },
+  { title: "Firmeza e viço", text: "Opções de tratamento estético definidas conforme as características da pele e os objetivos de cada pessoa.", icon: Sparkles },
+  { title: "Avaliação estética", text: "Uma conversa para conhecer suas queixas, analisar possibilidades e esclarecer benefícios, limites e cuidados.", icon: Stethoscope },
 ];
 
-const reviews = [
-  { name: "Mariana Costa", text: "Gostei de poder conversar com calma e sem sentir que precisava ter todas as respostas. A escuta me ajudou a organizar melhor algumas questões que eu vinha adiando." },
-  { name: "Rafael Martins", text: "O primeiro contato foi tranquilo. Consegui tirar minhas dúvidas sobre como funciona o atendimento e entender melhor o que esperar do processo." },
-  { name: "Camila Oliveira", text: "Achei importante ter espaço para falar no meu ritmo. A conversa trouxe perguntas que me fizeram olhar para algumas situações por outro ângulo." },
-  { name: "André Ferreira", text: "A explicação sobre as abordagens foi clara e respeitosa. Foi bom poder conversar sobre minhas expectativas antes de decidir os próximos passos." },
+const testimonials = [
+  { name: "Marina S.", text: "Atendimento impecável. Meus pés nunca estiveram tão saudáveis. Profissional excepcional!" },
+  { name: "Ricardo T.", text: "Resolveu meu problema de unha encravada com técnica e zero desconforto. Recomendo de olhos fechados." },
+  { name: "Camila R.", text: "Os produtos próprios são incríveis. A hidratação dura muito mais do que qualquer creme do mercado." },
+];
+
+const gallery = [
+  { title: "Unha encravada", file: "antes-depois-unha-encravada.jpg", desc: "Comparativo antes e depois do tratamento de unha encravada" },
+  { title: "Unha recuperada", file: "antes-depois-unha-recuperada.jpg", desc: "Evolução do cuidado com a unha" },
+  { title: "Verruga plantar", file: "antes-depois-verruga-plantar.jpg", desc: "Comparativo de tratamento de verruga plantar" },
+  { title: "Fissuras no calcanhar", file: "antes-depois-fissuras.jpg", desc: "Cuidado para fissuras e rachaduras" },
+  { title: "Hidratação profunda", file: "antes-depois-hidratacao.jpg", desc: "Comparativo de hidratação profunda" },
+  { title: "Reconstrução de unha", file: "reconstrucao-unha.jpg", desc: "Resultado de reconstrução ungueal" },
+  { title: "Biossegurança", file: "biosseguranca.jpg", desc: "Atendimento com luvas e material descartável" },
+  { title: "Avaliação inicial", file: "avaliacao-inicial.jpg", desc: "Avaliação podológica antes do procedimento" },
+  { title: "Ozonioterapia", file: "equipamento-ozonioterapia.jpg", desc: "Equipamento utilizado em atendimentos indicados" },
+  { title: "Linha própria", file: "emolipro-linha-propria.jpg", desc: "EmoliPro, cosmético podológico Tati Cubos" },
 ];
 
 const faq = [
-  ["O que é a Psicanálise?", "A psicanálise oferece um espaço de escuta e investigação da história pessoal, dos conflitos e dos sentimentos. O percurso é singular e construído a partir das questões trazidas por cada pessoa."],
-  ["O atendimento pode ser online?", "Sim. Há atendimento online e presencial em Fortaleza, Ceará. Consulte disponibilidade e horários pelo WhatsApp."],
-  ["Quanto tempo dura uma vivência de Energy Healing®?", "Conforme as informações fornecidas pelo profissional, uma vivência dura aproximadamente uma hora. Confirme a duração ao agendar."],
-  ["O que é Energy Healing®?", "Segundo o material fornecido, a técnica foi criada em 2004 por Brent Phillips e propõe trabalhar crenças e conteúdos do subconsciente. Converse sobre seus métodos e limites; não substitui cuidados médicos ou psicológicos indicados."],
-  ["O que significa PNL?", "PNL significa Programação Neurolinguística e explora relações entre linguagem, pensamento e comportamento. As evidências e resultados podem variar conforme a prática e o objetivo."],
-  ["Como começo?", "Envie uma mensagem para consultar valores, horários, modalidades e tirar suas dúvidas antes de decidir."],
+  ["O tratamento de unha encravada dói?", "A sensibilidade varia conforme cada caso. A Tati avalia a unha, explica a técnica indicada e trabalha com cuidado para minimizar o desconforto."],
+  ["Quantas sessões são necessárias?", "Depende da condição, da evolução e dos cuidados em casa. Após avaliar seu caso, a Tati explica uma previsão individual, sem prometer um número fixo."],
+  ["Quem tem diabetes pode fazer podologia?", "Pessoas com diabetes precisam de atenção específica. Informe seu histórico no agendamento para que a avaliação considere os cuidados e limites adequados."],
+  ["Onde fica o consultório em Curitiba?", "O atendimento em Curitiba é no Centro Cívico, na Rua da Glória, 396 — Sala 4, mediante agendamento."],
+  ["Você atende em casa?", "Sim, há atendimento domiciliar sob consulta de disponibilidade e região. Entre em contato para confirmar as condições do home care."],
+  ["Você também faz manicure e pedicure?", "A atuação inclui manicure especializada e cuidados com unhas. Envie uma mensagem para confirmar o serviço desejado e a disponibilidade."],
+  ["Atende crianças e idosos?", "Sim. O atendimento é adaptado à pessoa, com paciência e atenção às necessidades de crianças, idosos e pessoas que precisam de mais cuidado."],
+  ["Como funciona a parte estética?", "Os procedimentos estéticos são definidos após avaliação. A Tati explica indicações, contraindicações, cuidados e resultados possíveis antes de qualquer decisão."],
 ];
 
-function goWhatsapp(message: string) {
-  window.open(`${whatsapp}?text=${encodeURIComponent(message)}`, "_blank");
+function book(message = "Olá, Tati! Gostaria de agendar uma avaliação e saber qual atendimento é indicado para mim.") {
+  window.open(`${whatsapp}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
 }
 
 function Index() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [faqOpen, setFaqOpen] = useState<number | null>(0);
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [podologyIndex, setPodologyIndex] = useState(0);
+  const [aestheticIndex, setAestheticIndex] = useState(0);
+  const [lightbox, setLightbox] = useState<number | null>(null);
+  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const message = `Olá, Tati! Meu nome é ${form.name}. Telefone: ${form.phone}. E-mail: ${form.email || "não informado"}. Minha mensagem: ${form.message}`;
+    book(message);
+  };
+
+  const visiblePodology = Array.from({ length: 3 }, (_, i) => podologyServices[(podologyIndex + i) % podologyServices.length]);
+  const visibleAesthetic = Array.from({ length: 3 }, (_, i) => aestheticServices[(aestheticIndex + i) % aestheticServices.length]);
 
   return (
-    <main className="site">
-      <section className="hero" id="inicio">
-        <div className="container hero-grid">
-          <div className="hero-copy">
-            <img className="brand-logo hero-brand-logo" src="/midia/Logo%20Rozamato%20Psicanalista%20em%20Verde%20Floresta.png" alt="Logo Rozamato Psicanalista" />
-            <h1>Herbsten <em>Rozamato Sousa</em></h1>
-            <p className="hero-title">Graduado em História · Psicanalista Clínico · Practitioner em PNL · Hipnoterapeuta Clínico · Energy Healing®</p>
-            <p className="hero-statement">Conheça sua história com mais profundidade e explore os padrões que influenciam suas escolhas, seus relacionamentos e a maneira como você se percebe.</p>
-            <p className="hero-lead">Atendimento online e presencial em Fortaleza — CE, com abordagens voltadas ao autoconhecimento e à compreensão de padrões emocionais.</p>
-            <div className="hero-credentials"><span><ShieldCheck size={17}/> Formação pelo IAPB em 2018</span><span><Monitor size={17}/> Presencial e online</span></div>
-            <div className="hero-actions">
-              <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Quero agendar uma conversa sobre Psicanálise e as abordagens.")}><MessageCircle/> Agendar uma conversa</Button>
-              <Button variant="siteGhost" size="site" asChild><a href="#processo">Conhecer o processo <ArrowRight/></a></Button>
-            </div>
+    <main className="tc-site">
+      <div className="tc-topline"><div className="tc-wrap"><span><MapPin size={14}/> Curitiba · São José dos Pinhais · Telêmaco Borba</span><a href={instagram} target="_blank" rel="noreferrer">Siga @podologa_tati.cubos <ArrowRight size={13}/></a></div></div>
+      <header className="tc-header">
+        <div className="tc-wrap tc-nav">
+          <a className="tc-brand" href="#inicio" aria-label="Tati Cubos início">
+            <span className="tc-brand-mark"><Footprints size={29}/></span>
+            <span><strong>Tati Cubos</strong><small>Podologia e Cosméticos</small></span>
+          </a>
+          <button className="tc-menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}>{menuOpen ? <X/> : <Menu/>}</button>
+          <nav className={menuOpen ? "tc-links is-open" : "tc-links"} aria-label="Navegação principal">
+            {[["Sobre","sobre"],["Podologia","podologia"],["Estética","estetica"],["Produtos","produtos"],["Onde atendo","locais"],["Depoimentos","depoimentos"],["Galeria","galeria"],["Dúvidas","duvidas"]].map(([label,id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
+            <Button variant="siteGold" size="site" onClick={() => book()}>Agendar <ArrowRight size={16}/></Button>
+          </nav>
+        </div>
+      </header>
+
+      <section className="tc-hero" id="inicio">
+        <div className="tc-hero-leaf tc-leaf-one"/><div className="tc-hero-leaf tc-leaf-two"/>
+        <div className="tc-wrap tc-hero-grid">
+          <div className="tc-hero-copy">
+            <span className="tc-kicker"><span/> PODologia · Biomedicina estética · Curitiba e região</span>
+            <h1>Cuidado que une <em>ciência, técnica</em> e acolhimento.</h1>
+            <p className="tc-hero-lead">Saúde dos pés e cuidados estéticos com atenção individual, experiência e respeito à sua história.</p>
+            <p className="tc-hero-detail">Sou Tatiane Cubos, podóloga e biomédica. Há mais de 18 anos, ajudo pessoas a cuidarem da saúde, do conforto e da autoestima — com um plano pensado para cada caso.</p>
+            <div className="tc-hero-actions"><Button variant="siteGold" size="site" onClick={() => book()}>Agendar pelo WhatsApp <ArrowRight size={18}/></Button><a className="tc-text-link" href="#especialidades">Conhecer os atendimentos <ArrowDown size={16}/></a></div>
+            <div className="tc-hero-proof"><span><Award/> <b>18+ anos</b><small>de experiência</small></span><span><BadgeCheck/><b>Podologia desde 2018</b><small>Biomedicina em 2025</small></span><span><ShieldCheck/><b>Cuidado individual</b><small>com biossegurança</small></span></div>
+          </div>
+          <div className="tc-hero-visual">
+            <div className="tc-photo-main"><img src={media + "tati-hero.jpg"} alt="Tatiane Cubos em seu espaço de atendimento" onError={(e) => { e.currentTarget.style.display = "none"; e.currentTarget.parentElement?.classList.add("tc-photo-empty"); }}/><div className="tc-photo-placeholder"><Footprints size={48}/><strong>Sua foto profissional</strong><span>Adicione tati-hero.jpg em public/midia</span></div></div>
+            <div className="tc-photo-stamp"><span>TC</span><div><strong>Tati Cubos</strong><small>Podóloga & Biomédica</small></div></div>
+            <div className="tc-floating-note"><span><Check size={17}/></span><div><strong>Atendimento humanizado</strong><small>Tempo, escuta e cuidado</small></div></div>
           </div>
         </div>
+        <div className="tc-wrap tc-hero-bottom"><span>UM CUIDADO COMPLETO, EM DUAS ESPECIALIDADES</span><div><a href="#podologia"><Footprints/> Saúde dos pés</a><i/><a href="#estetica"><Sparkles/> Estética e pele</a></div></div>
       </section>
 
-      <div className="marquee"><div><span>ANSIEDADE</span><i>✦</i><span>DEPRESSÃO</span><i>✦</i><span>DEPENDÊNCIA EMOCIONAL</span><i>✦</i><span>TRAUMAS</span><i>✦</i><span>MEDOS</span><i>✦</i><span>AUTOESTIMA</span><i>✦</i><span>RELACIONAMENTOS</span><i>✦</i><span>FOBIAS</span><i>✦</i><span>LUTO</span><i>✦</i><span>ANSIEDADE</span><i>✦</i><span>DEPRESSÃO</span><i>✦</i><span>DEPENDÊNCIA EMOCIONAL</span><i>✦</i><span>TRAUMAS</span><i>✦</i><span>MEDOS</span><i>✦</i></div></div>
+      <section className="tc-stats"><div className="tc-wrap tc-stats-grid"><div><strong>18<span>+</span></strong><span>Anos de experiência na área da beleza e saúde</span></div><div><strong>2018</strong><span>Especialização em Podologia</span></div><div><strong>2025</strong><span>Formação em Biomedicina</span></div><div><strong>03</strong><span>Cidades atendidas no Paraná</span></div></div></section>
 
-      <section className="section intro-section">
-        <div className="container narrow center">
-          <span className="eyebrow">UM CONVITE AO AUTOCONHECIMENTO</span>
-          <h2>Suas crenças influenciam a forma como você <em>interpreta o mundo.</em></h2>
-          <p>Crenças, experiências e hábitos podem influenciar decisões e relacionamentos. O processo convida você a observar esses padrões com curiosidade, responsabilidade e abertura para novas perspectivas.</p>
-          <div className="center action">
-            <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de informações sobre os atendimentos.")}>Agendar meu atendimento <MessageCircle size={18}/></Button>
-          </div>
+      <section className="tc-section" id="sobre"><div className="tc-wrap tc-about-grid">
+        <div className="tc-about-visual"><img src={media + "tati-sobre.jpg"} alt="Tatiane Cubos, podóloga e biomédica" onError={(e) => { e.currentTarget.style.display = "none"; e.currentTarget.parentElement?.classList.add("tc-about-empty"); }}/><div className="tc-about-fallback"><Footprints size={42}/><span>Foto da Tati</span><small>Adicione tati-sobre.jpg em public/midia</small></div><div className="tc-round-note"><span>TC</span><small>Cuidado feito com<br/>conhecimento e carinho</small></div></div>
+        <div className="tc-about-copy"><span className="tc-kicker">01 · SOBRE MIM</span><h2>Sou a Tati. <em>Seu cuidado começa pela escuta.</em></h2><p>Trabalho há mais de 18 anos na área da beleza e da saúde, com especialização em Podologia desde 2018 e formação em Biomedicina concluída em 2025.</p><p>Na podologia, meu foco é a saúde dos pés: prevenção, avaliação e cuidado de condições podológicas. Na área estética, a proposta é avaliar a pele e conversar sobre procedimentos possíveis, com informação clara sobre indicações, limites e cuidados.</p><p>Atendo do bebê ao idoso, adaptando o atendimento às necessidades de cada pessoa. Depois da consulta, o cuidado continua com orientações e acompanhamento pelo WhatsApp conforme o caso.</p>
+          <div className="tc-values"><span><Check/> Plano personalizado</span><span><Check/> Formação técnica e científica</span><span><Check/> Orientações pós-atendimento</span><span><Check/> Linha própria de cosméticos</span></div><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Gostaria de conhecer melhor seu trabalho e agendar uma avaliação.")}>Vamos conversar <ArrowRight size={17}/></Button>
         </div>
-      </section>
+      </div></section>
 
-      <section className="section soft" id="especialidades">
-        <div className="container issues-container">
-          <div className="section-heading center">
-            <span className="eyebrow">QUESTÕES TRABALHADAS</span>
-            <h2>O que está acontecendo com você <em>merece ser compreendido.</em></h2>
-            <p>As questões são conversadas de forma individual, considerando o momento de vida, as expectativas e a abordagem escolhida.</p>
-          </div>
-          <div className="issue-window"><div className="issue-track">
-            {[0, 1].map(copy => <div className="conveyor-group" aria-hidden={copy === 1 ? true : undefined} key={copy}>
-              {issues.map(([title,text], i) => <article className="issue-card" key={title}>
-                
-                <div className="issue-body"><h3>{title}</h3><p>{text}</p></div>
-              </article>)}
-            </div>)}
-          </div></div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de informações sobre os atendimentos.")}>Agendar meu atendimento <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
+      <section className="tc-section tc-section-soft" id="especialidades"><div className="tc-wrap"><div className="tc-section-head"><span className="tc-kicker">02 · ESPECIALIDADES</span><h2>Do cuidado dos pés à <em>saúde da pele.</em></h2><p>Dois campos de atuação, cada um com sua avaliação e atenção especializada. Escolha o que faz sentido para você.</p></div><div className="tc-specialty-grid">
+        <a className="tc-specialty-card tc-foot-card" href="#podologia"><div className="tc-specialty-icon"><Footprints/></div><span className="tc-card-label">SAÚDE, CONFORTO E PREVENÇÃO</span><h3>Podologia</h3><p>Cuidados clínicos, preventivos e estéticos para unhas e pés, do atendimento infantil ao cuidado geriátrico.</p><span className="tc-card-bottom">Ver serviços <ArrowRight/></span><div className="tc-specialty-decoration"><Footprints/></div></a>
+        <a className="tc-specialty-card tc-skin-card" href="#estetica"><div className="tc-specialty-icon"><Sparkles/></div><span className="tc-card-label">PELE, VIÇO E AUTOESTIMA</span><h3>Biomedicina estética</h3><p>Avaliação individual para conversar sobre procedimentos estéticos faciais e opções de cuidado para a pele.</p><span className="tc-card-bottom">Conhecer a estética <ArrowRight/></span><div className="tc-specialty-decoration"><Sparkles/></div></a>
+      </div></div></section>
 
-      <section className="section process" id="processo">
-        <div className="container">
-          <div className="section-heading center">
-            <span className="eyebrow">COMO FUNCIONA</span>
-            <h2>Um processo com <em>acolhimento e direção.</em></h2>
-            <p>Da primeira conversa ao acompanhamento, cada etapa é pensada para que você saiba onde está e para onde está caminhando.</p>
-          </div>
-          <div className="steps">
-            {[
-              ["01","Primeiro contato","Você conversa com Herbsten, apresenta o que está vivendo e tira suas primeiras dúvidas."],
-              ["02","Entendimento","O momento atual e suas principais questões são compreendidos de forma individualizada."],
-              ["03","Processo terapêutico","As sessões seguem uma condução estruturada, respeitando seu ritmo e suas necessidades."],
-              ["04","Novos caminhos","O objetivo é ampliar consciência e construir formas mais saudáveis de lidar com suas experiências."]
-            ].map(([n,t,d]) => <article className="step" key={n}><div className="step-num">{n}</div><div><h3>{t}</h3><p>{d}</p></div></article>)}
-          </div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de informações sobre os atendimentos.")}>Agendar conversa <MessageCircle size={18}/></Button></div>
-        </div>
-          <div className="process-video-block">
-            <div className="process-video-copy">
-              <span className="eyebrow">ASSISTA TAMBÉM</span>
-              <h3>Entenda o processo de forma visual.</h3>
-              <p>Um vídeo ilustrativo para acompanhar a explicação sobre o funcionamento do processo e a relação entre pensamentos e emoções.</p>
-            </div>
-            <div className="process-video-frame">
-              <video controls preload="auto" playsInline webkit-playsinline="true" aria-label="Vídeo ilustrativo dos dois cérebros conversando">
-                <source src={presentationVideoUrl} type="video/mp4" />
-                Seu navegador não consegue reproduzir este vídeo.
-              </video>
-            </div>
-            <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de entender melhor como funciona o processo de atendimento.")}>Quero entender melhor <ArrowRight size={18}/></Button></div>
-          </div>
-      </section>
+      <section className="tc-section" id="podologia"><div className="tc-wrap">
+        <div className="tc-section-head tc-section-head-row"><div><span className="tc-kicker">03 · PODologia ESPECIALIZADA</span><h2>Seus pés merecem <em>atenção de verdade.</em></h2></div><p>Atendimentos clínicos, preventivos e estéticos, com técnica, biossegurança e tempo para entender seu caso.</p></div>
+        <div className="tc-carousel-head"><span>Serviços de podologia</span><div className="tc-carousel-controls"><button aria-label="Serviços anteriores" onClick={() => setPodologyIndex((podologyIndex - 1 + podologyServices.length) % podologyServices.length)}><ChevronLeft/></button><button aria-label="Próximos serviços" onClick={() => setPodologyIndex((podologyIndex + 1) % podologyServices.length)}><ChevronRight/></button></div></div>
+        <div className="tc-service-grid">{visiblePodology.map((service, i) => {const Icon = service.icon; return <article className="tc-service-card" key={service.title}><div className="tc-service-icon"><Icon/></div><span className="tc-service-number">0{(podologyIndex + i) % podologyServices.length + 1}</span><h3>{service.title}</h3><p>{service.text}</p><button onClick={() => book(`Olá, Tati! Gostaria de informações sobre ${service.title.toLowerCase()}.`)}>Saiba mais <ArrowRight size={15}/></button></article>;})}</div>
+        <div className="tc-carousel-dots">{podologyServices.map((s,i)=><button key={s.title} aria-label={`Mostrar ${s.title}`} className={i===podologyIndex?"active":""} onClick={()=>setPodologyIndex(i)}/>)}</div>
+        <div className="tc-service-note"><ShieldCheck/><p><strong>Não sabe qual serviço escolher?</strong><br/>Conte o que está sentindo. A avaliação ajuda a entender qual cuidado faz sentido para você.</p><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Estou com uma questão nos pés e gostaria de orientação para agendar uma avaliação.")}>Pedir orientação <ArrowRight size={16}/></Button></div>
+      </div></section>
 
-      <section className="section clinic-story" id="apresentacao">
-        <div className="container">
-          <div className="section-heading center">
-            <span className="eyebrow">CONHEÇA A TRAJETÓRIA</span>
-            <h2>Conheça Herbsten <em>pela sua própria apresentação.</em></h2>
-            <p>Assista ao vídeo em que Herbsten apresenta seu trabalho e compartilha sua proposta de atendimento.</p>
-          </div>
-          <div className="trajectory-video-frame">
-            <video controls preload="auto" playsInline webkit-playsinline="true" aria-label="Herbsten apresenta seu trabalho">
-              <source src={approachVideoUrl} type="video/mp4" />
-              Seu navegador não consegue reproduzir este vídeo.
-            </video>
-          </div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Assisti à sua apresentação e gostaria de saber mais sobre os atendimentos.")}>Conversar sobre o atendimento <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
+      <section className="tc-section tc-section-dark" id="estetica"><div className="tc-wrap">
+        <div className="tc-aesthetic-layout"><div className="tc-aesthetic-intro"><span className="tc-kicker tc-kicker-light">04 · BIOMEDICINA ESTÉTICA</span><h2>Cuidados para realçar <em>sua pele, sem perder sua essência.</em></h2><p>Na biomedicina estética, cada decisão começa com avaliação. Conversamos sobre suas queixas, características da pele, objetivos e opções possíveis para construir um plano individual.</p><div className="tc-aesthetic-image"><img src={media+"skinbooster.jpg"} alt="Imagem ilustrativa de procedimento estético facial" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-aesthetic-empty")}}/><div className="tc-aesthetic-fallback"><Sparkles/><strong>Seu procedimento estético</strong><small>Adicione skinbooster.jpg em public/midia</small></div></div><p className="tc-small-note">Os procedimentos são realizados somente quando indicados e dentro das habilitações profissionais aplicáveis. Indicações, contraindicações e resultados variam conforme cada pessoa.</p><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Gostaria de agendar uma avaliação de biomedicina estética.")}>Agendar avaliação estética <ArrowRight size={17}/></Button></div>
+          <div className="tc-aesthetic-services"><div className="tc-carousel-head tc-carousel-head-light"><span>Possibilidades de cuidado</span><div className="tc-carousel-controls"><button aria-label="Tratamentos anteriores" onClick={()=>setAestheticIndex((aestheticIndex-1+aestheticServices.length)%aestheticServices.length)}><ChevronLeft/></button><button aria-label="Próximos tratamentos" onClick={()=>setAestheticIndex((aestheticIndex+1)%aestheticServices.length)}><ChevronRight/></button></div></div><div className="tc-aesthetic-card-list">{visibleAesthetic.map((service,i)=>{const Icon=service.icon;return <article className="tc-aesthetic-card" key={service.title}><span className="tc-aesthetic-icon"><Icon/></span><div><h3>{service.title}</h3><p>{service.text}</p></div><span className="tc-aesthetic-num">0{(aestheticIndex+i)%aestheticServices.length+1}</span></article>})}</div><div className="tc-carousel-dots tc-dots-light">{aestheticServices.map((s,i)=><button key={s.title} aria-label={`Mostrar ${s.title}`} className={i===aestheticIndex?"active":""} onClick={()=>setAestheticIndex(i)}/>)}</div></div>
+        </div></div></section>
 
-      <section className="section soft" id="energy-healing">
-        <div className="container specialty-grid">
-          <div><span className="eyebrow">ENTENDA A ABORDAGEM</span><h2>O que é <em>Energy Healing®?</em></h2>
-          <p>Segundo o material apresentado, Energy Healing® foi criada em 2004 pelo norte-americano Brent Phillips. É descrita como uma abordagem direcionada ao subconsciente, que utiliza cinesiologia aplicada e processos associados à neurociência, à psicologia energética e à física quântica.</p>
-          <p>A vivência parte de uma situação que a pessoa deseja compreender, trabalhar ou modificar e dura aproximadamente uma hora, conforme as informações fornecidas pelo profissional.</p>
-          <p className="note">As descrições desta técnica não representam garantia de resultado nem substituem diagnóstico, tratamento médico ou acompanhamento psicológico quando necessários.</p>
-          <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Quero entender como funciona uma vivência de Energy Healing®.")}>Tirar dúvidas sobre Energy Healing® <ArrowRight size={18}/></Button></div>
-          <div className="specialty-quote"><Sparkles size={32}/><p>Um espaço para conhecer a abordagem, esclarecer dúvidas e conversar sobre expectativas realistas.</p></div>
-        </div>
-      </section>
+      <section className="tc-section tc-products" id="produtos"><div className="tc-wrap tc-products-grid"><div className="tc-products-copy"><span className="tc-kicker">05 · LINHA EXCLUSIVA</span><h2>O cuidado continua <em>em casa.</em></h2><p>Desenvolvi a linha de cosméticos podológicos Tati Cubos para apoiar a hidratação, a recuperação e a proteção da pele dos pés, com qualidade profissional.</p><div className="tc-product-points"><span><Check/> Hidratação intensa</span><span><Check/> Apoio à recuperação da pele ressecada</span><span><Check/> Proteção e cuidado diário</span></div><p>São produtos que também utilizo nos atendimentos e que podem fazer parte da sua rotina, conforme a orientação indicada para você.</p><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Gostaria de conhecer a linha de cosméticos podológicos Tati Cubos.")}>Conhecer os produtos <ArrowRight size={17}/></Button></div><div className="tc-product-visual"><div className="tc-product-orbit"/><div className="tc-product-image"><img src={media+"emolipro.jpg"} alt="EmoliPro, produto da linha própria Tati Cubos" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-product-empty")}}/><div className="tc-product-fallback"><Package size={48}/><strong>Linha Tati Cubos</strong><small>Adicione emolipro.jpg em public/midia</small></div></div><div className="tc-product-tag"><span>LINHA PRÓPRIA</span><strong>EmoliPro</strong><small>Emoliente de cutículas e calosidades</small></div></div></div></section>
 
-      <section className="section" id="vivencia">
-        <div className="container narrow center">
-          <span className="eyebrow">O QUE PODE SER TRABALHADO</span>
-          <h2>Uma vivência começa com uma situação que você deseja <em>compreender ou modificar.</em></h2>
-          <p>Ansiedade, medo, pânico, fobias, desânimo, tristeza, bloqueios emocionais, experiências traumáticas, insegurança, timidez, procrastinação, compulsão alimentar, dores crônicas, questões físicas e preocupações com escassez financeira podem ser temas trazidos para conversa, conforme o escopo do atendimento.</p>
-          <p>Esses temas não significam diagnóstico nem promessa de eliminação dos sintomas. Dores crônicas, sintomas físicos, depressão e outras condições de saúde devem ser avaliadas por profissionais de saúde habilitados. A vivência de Energy Healing® não substitui tratamento médico ou psicológico.</p>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Quero tirar dúvidas sobre uma vivência de Energy Healing® e sua duração.")}>Consultar sobre uma vivência de aproximadamente 1h <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
+      <section className="tc-section tc-section-soft" id="locais"><div className="tc-wrap"><div className="tc-section-head"><span className="tc-kicker">06 · ONDE ATENDO</span><h2>O cuidado está mais perto <em>de você.</em></h2><p>Atendimento mediante agendamento em três cidades do Paraná. Consulte disponibilidade para atendimento domiciliar.</p></div><div className="tc-location-grid">
+        {[["Curitiba","Centro Cívico","Rua da Glória, 396 — Sala 4","https://www.google.com/maps/search/?api=1&query=Rua+da+Gloria+396+Curitiba+PR"],["São José dos Pinhais","Região metropolitana","Rua Professora Lurdes Grutter Bonin, 1254 — Apto 102","https://www.google.com/maps/search/?api=1&query=Rua+Professora+Lurdes+Grutter+Bonin+1254+Sao+Jose+dos+Pinhais"],["Telêmaco Borba","Campos Gerais","Rua Vice-Prefeito Reginaldo Guedes Nocera, 439","https://www.google.com/maps/search/?api=1&query=Rua+Vice-Prefeito+Reginaldo+Guedes+Nocera+439+Telemaco+Borba"]].map(([city,region,address,map])=><article className="tc-location-card" key={city}><span className="tc-location-pin"><MapPin/></span><span className="tc-location-region">{region}</span><h3>{city}</h3><p>{address}</p><span className="tc-location-hours"><Clock3 size={15}/> Sob agendamento</span><a href={map} target="_blank" rel="noreferrer">Ver no mapa <ArrowRight size={15}/></a></article>)}</div><div className="tc-homecare"><div className="tc-homecare-icon"><HeartHandshakeIcon/></div><div><span className="tc-kicker">LEVO O CUIDADO ATÉ VOCÊ</span><h3>Atendimento domiciliar (home care)</h3><p>Quando sair de casa não é a melhor opção, consulte a possibilidade de atendimento domiciliar, com materiais e protocolos de biossegurança adequados ao serviço.</p></div><Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Gostaria de consultar a disponibilidade de atendimento domiciliar.")}>Consultar disponibilidade <ArrowRight size={16}/></Button></div></div></section>
 
-      <section className="section benefits" id="abordagens">
-        <div className="container">
-          <div className="section-heading center"><span className="eyebrow">ABORDAGENS PROFISSIONAIS</span><h2>Diferentes caminhos para <em>conhecer o trabalho.</em></h2><p>Entenda as principais áreas de atuação e converse com o profissional sobre objetivos, indicações e limites de cada abordagem.</p></div>
-          <div className="benefit-grid">
-            {[[ "Psicanálise clínica","Espaço de investigação da história pessoal, dos conflitos, dos sentimentos e dos padrões que se repetem."],[ "Hipnoterapia clínica","A hipnoterapia utiliza técnicas de hipnose em contexto terapêutico. Converse sobre o método, a formação e a adequação ao seu caso."],[ "Programação Neurolinguística (PNL)","PNL significa Programação Neurolinguística. O material apresentado a relaciona à linguagem, aos padrões de pensamento e comportamento, comunicação, gestão do estresse e definição de metas."],[ "Energy Healing®","Prática descrita pelo profissional como direcionada a crenças e conteúdos do subconsciente. Conheça os limites e expectativas realistas."]].map(([t,d],i)=><article key={t}><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></article>)}
-          </div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de conversar sobre as abordagens profissionais e tirar algumas dúvidas.")}>Tirar dúvidas sobre as abordagens <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
+      <section className="tc-section" id="depoimentos"><div className="tc-wrap"><div className="tc-section-head tc-section-head-center"><span className="tc-kicker">07 · DEPOIMENTOS</span><h2>Palavras de quem já <em>cuidou de si com a Tati.</em></h2><p>Experiências compartilhadas por clientes.</p></div><div className="tc-reviews-layout"><div className="tc-review-feature"><div className="tc-review-quote">“</div><div className="tc-review-stars">{[1,2,3,4,5].map(n=><Star key={n} fill="currentColor"/>)}</div><p>“{testimonials[reviewIndex].text}”</p><div className="tc-review-author"><span>{testimonials[reviewIndex].name.slice(0,1)}</span><div><strong>{testimonials[reviewIndex].name}</strong><small>Depoimento de cliente</small></div></div><div className="tc-review-controls"><button aria-label="Depoimento anterior" onClick={()=>setReviewIndex((reviewIndex-1+testimonials.length)%testimonials.length)}><ChevronLeft/></button><span>0{reviewIndex+1} / 0{testimonials.length}</span><button aria-label="Próximo depoimento" onClick={()=>setReviewIndex((reviewIndex+1)%testimonials.length)}><ChevronRight/></button></div></div><div className="tc-review-side"><span className="tc-kicker">CUIDADO QUE VAI ALÉM DA SESSÃO</span><h3>Uma relação construída com <em>confiança e atenção.</em></h3><p>Cada atendimento começa com uma conversa e uma avaliação individual. O objetivo é que você compreenda o cuidado proposto e se sinta à vontade para tirar dúvidas.</p><div className="tc-review-benefit"><BadgeCheck/><span><strong>Escuta e respeito</strong><small>Você é atendido no seu ritmo.</small></span></div><div className="tc-review-benefit"><ShieldCheck/><span><strong>Orientação clara</strong><small>Você entende cada etapa do cuidado.</small></span></div><Button variant="siteGold" size="site" onClick={()=>book()}>Agendar meu atendimento <ArrowRight size={17}/></Button></div></div><p className="tc-disclaimer">Os depoimentos apresentados devem corresponder a relatos reais e autorizados. Se necessário, substitua os textos de demonstração pelos depoimentos aprovados pela profissional.</p></div></section>
 
-      <section className="section intro-section">
-        <div className="container narrow center">
-          <span className="eyebrow">ÁREAS DA VIDA</span><h2>Questões pessoais, familiares e profissionais podem se <em>conectar.</em></h2>
-          <p>O trabalho pode abrir conversas sobre saúde familiar, relações no trabalho, prosperidade, hábitos de emagrecimento, crescimento espiritual, autoestima, objetivos pessoais e sentido de vida — sempre respeitando a individualidade e sem prometer resultados específicos.</p>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de saber qual abordagem pode ser adequada para minha necessidade.")}>Conversar sobre meu objetivo <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
+      <section className="tc-section tc-gallery-section" id="galeria"><div className="tc-wrap"><div className="tc-section-head tc-section-head-row"><div><span className="tc-kicker">08 · GALERIA</span><h2>Detalhes do cuidado, <em>na prática.</em></h2></div><p>Procedimentos, bastidores e evolução dos cuidados. Clique em uma imagem para ampliar.</p></div><div className="tc-gallery-grid">{gallery.map((item,i)=><button className="tc-gallery-item" key={item.file} onClick={()=>setLightbox(i)}><img src={media+item.file} alt={item.desc} onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-gallery-empty")}}/><span className="tc-gallery-fallback"><Footprints/><small>Adicionar imagem</small></span><span className="tc-gallery-caption"><strong>{item.title}</strong><span>Ver imagem <ArrowRight size={14}/></span></span></button>)}</div><p className="tc-gallery-note">Imagens de antes e depois devem ser reais, autorizadas e apresentadas sem edição enganosa. Resultados variam conforme cada caso.</p></div></section>
 
-      <section className="section about" id="sobre">
-        <div className="container about-grid">
-          <figure className="about-image"><img src={portraitUrl} alt="Retrato profissional de Herbsten Rozamato Sousa" loading="lazy"/></figure>
-          <div className="about-copy">
-            <span className="eyebrow">QUEM É HERBSTEN ROZAMATO SOUSA</span>
-            <h2>Formação, experiência e um olhar voltado ao <em>autoconhecimento.</em></h2>
-            <p>Herbsten Rozamato Sousa é graduado em História e concluiu sua formação em Psicanálise pelo Instituto de Psicanálise — IAPB, em 2018. Também atua como Practitioner em PNL, hipnoterapeuta clínico e terapeuta de tratamento físico e emocional e Energy Healing®.</p>
-            <p>Sua apresentação profissional reúne diferentes abordagens e busca oferecer espaço para refletir sobre sentimentos, crenças, experiências e padrões pessoais.</p>
-            <div className="about-points"><div><Check size={17}/> Graduado em História</div><div><Check size={17}/> Psicanálise pelo IAPB (2018)</div><div><Check size={17}/> Practitioner em PNL, Hipnoterapia e Energy Healing®</div></div>
-            <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de informações sobre os atendimentos.")}>Agendar conversa <MessageCircle size={18}/></Button>
-          </div>
-        </div>
-      </section>
+      <section className="tc-section tc-section-soft" id="duvidas"><div className="tc-wrap tc-faq-layout"><div className="tc-faq-intro"><span className="tc-kicker">09 · DÚVIDAS FREQUENTES</span><h2>Vamos esclarecer <em>suas dúvidas?</em></h2><p>Se sua pergunta não estiver aqui, mande uma mensagem. A Tati responde pessoalmente.</p><Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Tenho uma dúvida sobre os atendimentos.")}>Perguntar pelo WhatsApp <MessageCircle size={17}/></Button></div><div className="tc-faq-list">{faq.map(([q,a],i)=><article className={faqOpen===i?"tc-faq-item is-open":"tc-faq-item"} key={q}><button onClick={()=>setFaqOpen(faqOpen===i?null:i)} aria-expanded={faqOpen===i}><span>{q}</span><ChevronDown/></button>{faqOpen===i&&<p>{a}</p>}</article>)}</div></div></section>
 
-      <section className="section soft" id="experiencia">
-        <div className="container about-grid">
-          <figure className="about-image experience-image"><img src={tijucaUrl} alt="Registro relacionado à experiência de atendimento na comunidade próxima à Tijuca Alimentos" loading="lazy"/></figure>
-          <div className="about-copy">
-            <span className="eyebrow">TRAJETÓRIA E EXPERIÊNCIA</span>
-            <h2>Experiência construída em diferentes <em>contextos de atendimento.</em></h2>
-            <p>Herbsten relata ter realizado durante um ano atendimentos psicanalíticos junto à comunidade próxima à indústria Tijuca Alimentos, em Jangurussu, Fortaleza.</p>
-            <p>Também informa experiências de atendimento particular no Studio Pilates MoveOnMatPilates, na Clínica Halasana Terapias Integrativas e no Espaço Estar de terapias integrativas.</p>
-            <p>A imagem apresentada nesta seção é um registro relacionado à Tijuca Alimentos; não representa endosso ou vínculo institucional atual.</p>
-            <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de saber mais sobre sua trajetória e os atendimentos.")}>Conhecer os atendimentos <MessageCircle size={18}/></Button>
-          </div>
-        </div>
-      </section>
+      <section className="tc-section tc-contact" id="contato"><div className="tc-wrap tc-contact-grid"><div><span className="tc-kicker tc-kicker-light">10 · ENTRE EM CONTATO</span><h2>Seu próximo passo começa <em>com uma conversa.</em></h2><p>Conte o que você está sentindo ou o que gostaria de cuidar. Vamos conversar sobre o atendimento mais adequado para você.</p><div className="tc-contact-details"><a href={whatsapp} target="_blank" rel="noreferrer"><span><MessageCircle/></span><div><small>WHATSAPP</small><strong>(41) 99977-8493</strong></div><ArrowRight/></a><a href="mailto:contato@taticubos.com.br"><span><Package/></span><div><small>E-MAIL</small><strong>contato@taticubos.com.br</strong></div><ArrowRight/></a><a href={instagram} target="_blank" rel="noreferrer"><span><Sparkles/></span><div><small>INSTAGRAM</small><strong>@podologa_tati.cubos</strong></div><ArrowRight/></a></div><p className="tc-contact-hours"><Clock3 size={16}/> Atendimento sob agendamento · Curitiba e região</p></div><form className="tc-contact-form" onSubmit={submitForm}><span className="tc-form-kicker">FALE COM A TATI</span><h3>Como posso ajudar?</h3><p>Preencha os campos e sua mensagem será preparada para enviar pelo WhatsApp.</p><label>Seu nome<input required value={form.name} onChange={e=>setForm({...form,name:e.target.value})} placeholder="Como podemos chamar você?"/></label><div className="tc-form-row"><label>Telefone / WhatsApp<input required value={form.phone} onChange={e=>setForm({...form,phone:e.target.value})} placeholder="(41) 99999-9999"/></label><label>E-mail (opcional)<input type="email" value={form.email} onChange={e=>setForm({...form,email:e.target.value})} placeholder="voce@email.com"/></label></div><label>Como posso ajudar?<textarea required rows={4} value={form.message} onChange={e=>setForm({...form,message:e.target.value})} placeholder="Conte um pouco sobre o que deseja cuidar..."/></label><Button variant="siteGold" size="site" type="submit">Preparar mensagem no WhatsApp <ArrowRight size={17}/></Button><small>Ao continuar, o WhatsApp será aberto com os dados preenchidos para você revisar e enviar.</small></form></div></section>
 
-      <section className="section method-section">
-        <div className="container">
-          <div className="section-heading center"><span className="eyebrow">UM PROCESSO DE REFLEXÃO</span><h2>Compreender padrões pode abrir espaço para <em>novas perspectivas.</em></h2><p>Cada abordagem tem características e limites próprios. Antes de iniciar, converse sobre o método, os objetivos possíveis e suas dúvidas.</p></div>
-          <div className="method-cards">
-            <article><div className="method-icon"><Brain size={21}/></div><span>01</span><h3>Compreender</h3><p>Olhar para o que você sente e identificar padrões que se repetem na sua vida.</p></article>
-            <article><div className="method-icon"><HeartHandshake size={21}/></div><span>02</span><h3>Acolher</h3><p>Ter um espaço seguro para falar sobre experiências difíceis com respeito à sua história.</p></article>
-            <article><div className="method-icon"><Sparkles size={21}/></div><span>03</span><h3>Reorganizar</h3><p>Construir novas perspectivas para lidar com emoções, relações e situações do cotidiano.</p></article>
-            <article><div className="method-icon"><ArrowRight size={21}/></div><span>04</span><h3>Avançar</h3><p>Levar mais consciência para suas escolhas, limites e próximos passos.</p></article>
-          </div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de saber mais sobre Energy Healing®.")}>Começar meu processo <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
+      <footer className="tc-footer"><div className="tc-wrap"><div className="tc-footer-grid"><div className="tc-footer-about"><a className="tc-brand tc-brand-footer" href="#inicio"><span className="tc-brand-mark"><Footprints/></span><span><strong>Tati Cubos</strong><small>Podologia e Cosméticos</small></span></a><p>Cuidado especializado para a saúde e a beleza dos seus pés e da sua pele, com técnica, ciência e acolhimento.</p></div><div><strong>Navegue</strong><a href="#sobre">Sobre mim</a><a href="#podologia">Podologia</a><a href="#estetica">Biomedicina estética</a><a href="#produtos">Produtos</a><a href="#locais">Onde atendo</a><a href="#galeria">Galeria</a></div><div><strong>Atendimento</strong><span>Curitiba · Centro Cívico</span><span>São José dos Pinhais</span><span>Telêmaco Borba</span><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp: (41) 99977-8493</a><a href="mailto:contato@taticubos.com.br">contato@taticubos.com.br</a></div></div><div className="tc-footer-bottom"><span>© 2026 Tati Cubos — Podologia e Cosméticos. Todos os direitos reservados.</span><span>Registro profissional informado: 170107510001/91</span></div><p className="tc-footer-note">Conteúdo informativo. Procedimentos dependem de avaliação individual; imagens e resultados não representam garantia de resultado.</p></div></footer>
 
-      <section className="section specialty">
-        <div className="container specialty-grid">
-          <div><span className="eyebrow">ENERGY HEALING®</span><h2>Energy <em>Healing®</em></h2><p>Segundo o material fornecido, Energy Healing® foi criada em 2004 por Brent Phillips e propõe explorar crenças e conteúdos do subconsciente. A descrição menciona cinesiologia aplicada e processos associados à psicologia energética.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Quero saber mais sobre a PNL e Hipnoterapia Clínica.")}>Quero saber mais <ArrowRight size={18}/></Button></div>
-          <div className="specialty-quote"><Brain size={32}/><p>“Compreender seus padrões pode ser o começo de uma nova forma de se relacionar consigo mesmo.”</p></div>
-        </div>
-      </section>
-
-      <section className="section benefits">
-        <div className="container">
-          <div className="section-heading center"><span className="eyebrow">SOBRE A PROPOSTA DE ATENDIMENTO</span><h2>Um espaço de conversa que respeita <em>sua individualidade.</em></h2><p>Entenda como funciona cada abordagem, esclareça suas dúvidas e escolha com tranquilidade se deseja iniciar um atendimento.</p></div>
-          <div className="benefit-grid">
-            {[[ "Escuta individualizada","Cada pessoa possui uma história, experiências e necessidades diferentes."],[ "Formação e abordagens","Psicanálise pelo IAPB, Practitioner em PNL, Hipnoterapia Clínica e Energy Healing®."],[ "Atendimento flexível","Opções presencial e online para facilitar o acesso ao acompanhamento."],[ "Ambiente acolhedor","Um espaço de respeito, privacidade e cuidado durante todo o processo."]].map(([t,d],i)=><article key={t}><span>0{i+1}</span><h3>{t}</h3><p>{d}</p></article>)}
-          </div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Quero agendar um atendimento com você.")}>Agendar meu atendimento <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
-
-      <section className="section reviews">
-        <div className="container reviews-container">
-          <div className="section-heading center"><span className="eyebrow">AVALIAÇÕES</span><h2>Um atendimento começa com escuta, informação e <em>clareza.</em></h2><p>Conheça as modalidades e tire suas dúvidas antes de marcar uma conversa.</p></div>
-          <div className="review-window"><div className="review-track">{[0,1].map(copy => <div className="conveyor-group" aria-hidden={copy === 1 ? true : undefined} key={copy}>{reviews.map(({name,text})=><article className="review-card" key={name}><div className="review-stars" aria-label="Estrelas decorativas de demonstração">{[0,1,2,3,4].map(star=><Star key={star} size={18}/>)}</div><p>{text}</p><div className="review-person"><div className="review-avatar"><UserRound size={24}/></div><div className="review-person-info"><h3>{name}</h3></div></div></article>)}</div>)}</div></div>
-          <p className="reviews-disclaimer">Depoimentos e nomes fictícios, criados apenas para demonstração do layout. Não representam avaliações reais de clientes.</p>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Quero conversar sobre um atendimento.")}>Agendar atendimento <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
-
-      <section className="section location">
-        <div className="container location-grid">
-          <figure className="location-map">
-            {clinicMapUrl ? <iframe title="Google Maps — atendimento em Fortaleza, CE" src={clinicMapUrl} loading="lazy" allowFullScreen referrerPolicy="strict-origin-when-cross-origin"/> : <div className="location-map-pending"><MapPin size={36}/><p>Mapa temporariamente indisponível.</p></div>}
-            <figcaption>Atendimento presencial<br/>Fortaleza — CE, Brasil<br/>Endereço informado ao agendar</figcaption>
-          </figure>
-          <div className="location-copy"><span className="eyebrow">ATENDIMENTO</span><h2>Presencial ou online, <em>onde fizer sentido para você.</em></h2><p>Escolha a modalidade mais adequada para sua rotina. Para atendimento presencial, entre em contato para consultar disponibilidade e horários.</p><div className="location-list"><div><MapPin size={18}/><span><strong>Presencial</strong>Fortaleza — CE, Brasil<br/>Consulte o endereço ao agendar.</span></div><div><Video size={18}/><span><strong>Online</strong>Atendimento à distância, com praticidade e privacidade.</span></div><div><Clock3 size={18}/><span><strong>Horários</strong>Consulte diretamente com o Herbsten os horários disponíveis.</span></div></div><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de consultar horários e modalidade de atendimento.")}>Consultar horários <ArrowRight size={18}/></Button></div>
-        </div>
-      </section>
-
-      <section className="section faq" id="faq">
-        <div className="container faq-grid">
-          <div className="faq-intro"><span className="eyebrow">PERGUNTAS FREQUENTES</span><h2>Informação clara para você <em>decidir com tranquilidade.</em></h2><p>Se ainda não encontrou a resposta que procura, fale diretamente com o Herbsten.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Tenho uma dúvida sobre a terapia.")}>Tirar uma dúvida <MessageCircle size={18}/></Button></div>
-          <div className="faq-list">{faq.map(([q,a],i)=><div className={`faq-item ${openFaq===i ? "open":""}`} key={q}><Button variant="sitePlain" size="site" aria-expanded={openFaq===i} onClick={() => setOpenFaq(openFaq===i ? null : i)}><span>{q}</span><ChevronDown size={18}/></Button>{openFaq===i && <p>{a}</p>}</div>)}</div>
-        </div>
-      </section>
-
-      <section className="final-cta">
-        <div className="container center"><span className="eyebrow">SEU PROCESSO COMEÇA COM UMA CONVERSA</span><h2>Comece com uma conversa. <em>Conheça as possibilidades.</em></h2><p>Converse com o Herbsten, explique o que você está vivendo e descubra como funciona o atendimento.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Quero dar o primeiro passo e conhecer a Psicanálise.")}>Quero conversar com o Herbsten <ArrowRight size={19}/></Button></div>
-      </section>
-
-      <footer><div className="container footer-grid"><div><img className="brand-logo footer-brand-logo" src="/midia/Logo%20Rozamato%20Psicanalista%20em%20Verde%20Floresta.png" alt="Logo Rozamato Psicanalista" loading="lazy" /><p>Psicanalista Clínico · Practitioner em PNL<br/>Hipnoterapeuta · Energy Healing®</p></div><div><strong>Atendimento</strong><span>Online e presencial</span><span>Consulte horários</span></div><div><strong>Contato</strong><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de informações sobre atendimento online e presencial.")}><MessageCircle size={16}/> WhatsApp</Button><a href="#inicio"><Instagram size={16}/> Instagram</a></div></div><div className="footer-bottom">© {new Date().getFullYear()} Herbsten Rozamato Sousa. Todos os direitos reservados.</div></footer>
-
-      <Button variant="whatsapp" size="site" onClick={() => goWhatsapp("Olá, Herbsten! Gostaria de saber mais sobre Psicanálise e as abordagens.")} aria-label="Falar no WhatsApp"><img src={whatsappIcon.url} alt=""/></Button>
+      <button className="tc-whatsapp-float" onClick={()=>book()} aria-label="Agendar atendimento pelo WhatsApp"><MessageCircle/><span>Agendar atendimento</span></button>
+      {lightbox!==null&&<div className="tc-lightbox" role="dialog" aria-modal="true" aria-label={gallery[lightbox].title} onClick={()=>setLightbox(null)}><button className="tc-lightbox-close" aria-label="Fechar imagem"><X/></button><button className="tc-lightbox-prev" aria-label="Imagem anterior" onClick={e=>{e.stopPropagation();setLightbox((lightbox-1+gallery.length)%gallery.length)}}><ChevronLeft/></button><figure onClick={e=>e.stopPropagation()}><img src={media+gallery[lightbox].file} alt={gallery[lightbox].desc}/><figcaption>{gallery[lightbox].title}</figcaption></figure><button className="tc-lightbox-next" aria-label="Próxima imagem" onClick={e=>{e.stopPropagation();setLightbox((lightbox+1)%gallery.length)}}><ChevronRight/></button></div>}
     </main>
   );
 }
+
+function HeartHandshakeIcon() { return <HeartPulse size={28}/>; }
