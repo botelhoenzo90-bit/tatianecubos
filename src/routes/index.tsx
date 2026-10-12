@@ -102,18 +102,6 @@ function Index() {
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  return () => window.clearInterval(timer);
-  }, []);
-
-  const submitForm = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const message = `Olá, Tati! Meu nome é ${form.name}. Telefone: ${form.phone}. E-mail: ${form.email || "não informado"}. Minha mensagem: ${form.message}`;
-    book(message);
-  };
-
-  const visiblePodology = Array.from({ length: 3 }, (_, i) => podologyServices[(podologyIndex + i) % podologyServices.length]);
-  const visibleAesthetic = Array.from({ length: 3 }, (_, i) => aestheticServices[(aestheticIndex + i) % aestheticServices.length]);
-
   return (
     <main className="tc-site">
 
