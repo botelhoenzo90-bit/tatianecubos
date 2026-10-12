@@ -18,3 +18,4 @@
 - Derive sitemap URLs from explicit route staticData.sitemap decisions with the shared sitemap helper, so future public pages stay discoverable without manual URL lists.
 - Keep clinic phone display and WhatsApp destinations in the shared clinic-contact module so booking links cannot diverge from the displayed number.
 - Import existing procedure illustrations through the shared procedure-images module so both conveyors use project-managed media rather than unrelated remote stock images.
+- Associate podology illustrations by service name in the shared image module, not carousel index, so rearranging cards cannot mismatch their photos.

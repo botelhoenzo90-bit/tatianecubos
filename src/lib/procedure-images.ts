@@ -16,25 +16,28 @@ export const aestheticImages = [
   "/Tratamento%20Facial%20em%20Cl%C3%ADnica%20de%20Luxo.png",
 ];
 
-export const podologyImages = [
-  "/P%C3%A9s%20Fedorentos%20com%20Bact%C3%A9rias%20Ilustradas.png",
-  "/Massagem%20Relaxante%20para%20os%20P%C3%A9s.png",
-  "/Imagem%20do%20ChatGPT%2012%20de%20out.%20de%202026%2C%2015_37_31.png",
-  "/Tratamento%20Podol%C3%B3gico%20Profissional%20no%20H%C3%A1lux.png",
-  "/Tratamento%20Profissional%20da%20Unha%20do%20P%C3%A9.png",
-  "/Imagem%20do%20ChatGPT%2012%20de%20out.%20de%202026%2C%2015_32_38.png",
-  "/Tratamento%20Podol%C3%B3gico%20em%20Spa%20Cl%C3%ADnico.png",
-  "/Imagem%20do%20ChatGPT%2012%20de%20out.%20de%202026%2C%2015_29_58.png",
-  "/Pedicure%20Cl%C3%ADnico%20com%20Tratamento%20do%20Calcanhar.png",
-  "/Pedicure%20Relaxante%20no%20Spa.png",
-  "/Aplica%C3%A7%C3%A3o%20de%20%C3%B3rtese%20no%20h%C3%A1lux.png",
-  "/Aplica%C3%A7%C3%A3o%20de%20%C3%B3rtese%20corretiva%20na%20unha%20%D7%90.png",
-  "/Tratamento%20Profissional%20de%20Unha%20Encravada.png",
-  "/Tratamento%20de%20Calo%20em%20Cl%C3%ADnica%20Podol%C3%B3gica.png",
-  "/Avalia%C3%A7%C3%A3o%20Podol%C3%B3gica%20com%20Cuidado%20Profissional.png",
-  "/Imagem%20do%20ChatGPT%2012%20de%20out.%20de%202026%2C%2015_39_14.png",
-  "/Exame%20Podol%C3%B3gico%20com%20Les%C3%B5es%20Cut%C3%A2neas.png",
-];
+// Match the subject of each illustration to the service, never its carousel position.
+export const podologyImagesByService: Record<string, string> = Object.fromEntries(
+  Object.entries({
+    "Unhas encravadas": "Tratamento Profissional de Unha Encravada.png",
+    "Órtese ungueal": "Aplicação de órtese corretiva na unha א.png",
+    "Calos e calosidades": "Tratamento de Calo em Clínica Podológica.png",
+    "Fissuras e rachaduras": "Pedicure Clínico com Tratamento do Calcanhar.png",
+    "Micose e frieiras": "Tratamento Profissional da Unha do Pé.png",
+    "Pés diabéticos": "Avaliação Podológica com Cuidado Profissional.png",
+    "Podologia infantil": "Imagem do ChatGPT 12 de out. de 2026, 15_32_38.png",
+    "Podologia geriátrica": "Avaliação Podológica com Cuidado Profissional.png",
+    "Reconstrução de unhas": "Tratamento Podológico Profissional no Hálux.png",
+    "Higienização e corte técnico": "Tratamento Podológico em Spa Clínico.png",
+    "Hidratação profunda": "Massagem Relaxante para os Pés.png",
+    "Bicho de pé": "Imagem do ChatGPT 12 de out. de 2026, 15_37_31.png",
+    "Chulé e odor nos pés": "Pés Fedorentos com Bactérias Ilustradas.png",
+    "Olho de peixe (verruga plantar)": "Imagem do ChatGPT 12 de out. de 2026, 15_39_14.png",
+    "Alterações e infecções da pele": "Exame Podológico com Lesões Cutâneas.png",
+    "Ressecamento dos pés": "Pedicure Relaxante no Spa.png",
+    "Podologia preventiva": "Avaliação Podológica com Cuidado Profissional.png",
+  }).map(([service, filename]) => [service, `/${encodeURIComponent(filename)}`]),
+);
 
 export type ResultTag = "PODOLOGIA" | "ESTÉTICA";
 export type ResultImage = { image: string; title: string; alt: string; tag: ResultTag };
