@@ -23,6 +23,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Tati Cubos — Podologia, Estética e Cosméticos" },
       { property: "og:description", content: "Cuidado especializado para a saúde e a beleza dos pés e da pele, com técnica, ciência e acolhimento." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:locale", content: "pt_BR" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#183f2f" },
@@ -121,6 +122,7 @@ function Index() {
 
   const visiblePodology = Array.from({ length: 3 }, (_, i) => podologyServices[(podologyIndex + i) % podologyServices.length]);
   const visibleAesthetic = Array.from({ length: 3 }, (_, i) => aestheticServices[(aestheticIndex + i) % aestheticServices.length]);
+  const lightboxImage = lightbox === null ? undefined : gallery[lightbox];
 
   return (
     <main className="tc-site">
@@ -142,7 +144,18 @@ function Index() {
         
       </section>
 
-      <section className="tc-marquee" aria-label="Informações sobre a profissional"><div className="tc-marquee-track"><span><span>Podologia desde 2018</span><i>✦</i><span>Biomedicina em 2025</span><i>✦</i><span>Atendimento humanizado</span><i>✦</i><span>Curitiba e região</span><i>✦</i><span><span>Podologia desde 2018</span><i>✦</i><span>Biomedicina em 2025</span><i>✦</i><span>Atendimento humanizado</span><i>✦</i><span>Curitiba e região</span><i>✦</i></div></section>
+      <section className="tc-marquee" aria-label="Informações sobre a profissional">
+        <div className="tc-marquee-track">
+          <span>Podologia desde 2018</span><i>✦</i>
+          <span>Biomedicina em 2025</span><i>✦</i>
+          <span>Atendimento humanizado</span><i>✦</i>
+          <span>Curitiba e região</span><i>✦</i>
+          <span>Podologia desde 2018</span><i>✦</i>
+          <span>Biomedicina em 2025</span><i>✦</i>
+          <span>Atendimento humanizado</span><i>✦</i>
+          <span>Curitiba e região</span><i>✦</i>
+        </div>
+      </section>
 
       <section className="tc-section tc-how" id="como-funciona"><div className="tc-wrap"><div className="tc-section-head tc-section-head-center"><span className="tc-kicker">COMO FUNCIONA</span><h2>Seu cuidado começa <em>com uma boa conversa.</em></h2><p>Um processo claro, acolhedor e pensado para entender o que você precisa.</p></div><div className="tc-how-grid"><article><span>01</span><h3>Você conta</h3><p>Fale sobre o que deseja cuidar, seus sintomas e suas expectativas.</p></article><article><span>02</span><h3>Avaliamos juntos</h3><p>A Tati entende seu caso, explica as opções e esclarece dúvidas.</p></article><article><span>03</span><h3>Plano individual</h3><p>Você recebe orientação sobre o atendimento indicado e os próximos cuidados.</p></article></div><Button variant="siteGold" size="site" onClick={() => book()}>Agendar uma conversa <ArrowRight size={17}/></Button></div></section>
 
@@ -195,7 +208,7 @@ function Index() {
       <footer className="tc-footer"><div className="tc-wrap"><div className="tc-footer-grid"><div className="tc-footer-about"><a className="tc-brand tc-brand-footer" href="#inicio"><span className="tc-brand-mark"><Footprints/></span><span><strong>Tati Cubos</strong><small>Podologia e Cosméticos</small></span></a><p>Cuidado especializado para a saúde e a beleza dos seus pés e da sua pele, com técnica, ciência e acolhimento.</p></div><div><strong>Navegue</strong><a href="#sobre">Sobre mim</a><a href="#podologia">Podologia</a><a href="#estetica">Biomedicina estética</a><a href="#produtos">Produtos</a><a href="#locais">Onde atendo</a></div><div><strong>Atendimento</strong><span>Curitiba · Centro Cívico</span><span>São José dos Pinhais</span><span>Telêmaco Borba</span><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp: (41) 99977-8493</a><a href="mailto:contato@taticubos.com.br">contato@taticubos.com.br</a></div></div><div className="tc-footer-bottom"><span>© 2026 Tati Cubos — Podologia e Cosméticos. Todos os direitos reservados.</span><span>Registro profissional informado: 170107510001/91</span></div><p className="tc-footer-note">Conteúdo informativo. Procedimentos dependem de avaliação individual; imagens e resultados não representam garantia de resultado.</p></div></footer>
 
       <button className="tc-whatsapp-float" onClick={()=>book()} aria-label="Agendar atendimento pelo WhatsApp"><img src="/whatsapp-logo-CuaKE2hX.png" alt="WhatsApp"/></button>
-      {lightbox!==null&&<div className="tc-lightbox" role="dialog" aria-modal="true" aria-label={gallery[lightbox].title} onClick={()=>setLightbox(null)}><button className="tc-lightbox-close" aria-label="Fechar imagem"><X/></button><button className="tc-lightbox-prev" aria-label="Imagem anterior" onClick={e=>{e.stopPropagation();setLightbox((lightbox-1+gallery.length)%gallery.length)}}><ChevronLeft/></button><figure onClick={e=>e.stopPropagation()}><img src={media+gallery[lightbox].file} alt={gallery[lightbox].desc}/><figcaption>{gallery[lightbox].title}</figcaption></figure><button className="tc-lightbox-next" aria-label="Próxima imagem" onClick={e=>{e.stopPropagation();setLightbox((lightbox+1)%gallery.length)}}><ChevronRight/></button></div>}
+      {lightbox!==null&&lightboxImage&&<div className="tc-lightbox" role="dialog" aria-modal="true" aria-label={lightboxImage.title} onClick={()=>setLightbox(null)}><button className="tc-lightbox-close" aria-label="Fechar imagem"><X/></button><button className="tc-lightbox-prev" aria-label="Imagem anterior" onClick={e=>{e.stopPropagation();setLightbox((lightbox-1+gallery.length)%gallery.length)}}><ChevronLeft/></button><figure onClick={e=>e.stopPropagation()}><img src={media+lightboxImage.file} alt={lightboxImage.desc}/><figcaption>{lightboxImage.title}</figcaption></figure><button className="tc-lightbox-next" aria-label="Próxima imagem" onClick={e=>{e.stopPropagation();setLightbox((lightbox+1)%gallery.length)}}><ChevronRight/></button></div>}
     </main>
   );
 }
