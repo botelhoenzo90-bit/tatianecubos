@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import tatiPortrait from "@/assets/tati-retrato.png.asset.json";
 import { clinicPhone, clinicWhatsapp } from "@/lib/clinic-contact";
-import { aestheticImages, podologyImages } from "@/lib/procedure-images";
+import { aestheticImages, podologyImages, resultImages } from "@/lib/procedure-images";
 import { credentialImages } from "@/lib/credential-images";
 
 const siteUrl = "https://tatianecubos.com.br";
@@ -78,18 +78,6 @@ const testimonials = [
   { name: "Mariana S.", text: "A avaliação da unha encravada foi feita com muito cuidado. Entendi cada etapa do atendimento e saí com orientações para manter os pés bem cuidados." },
   { name: "Camila R.", text: "Pude falar sobre manchas, textura e o que queria melhorar na pele. Recebi explicações claras sobre as possibilidades e sobre o que fazia sentido para mim." },
   { name: "Juliana M.", text: "O atendimento foi atencioso do começo ao fim. Gostei de ter um plano pensado para minhas necessidades, com recomendações práticas para continuar o cuidado em casa." },
-];
-
-const resultImages = [
-  { file: "galeria-unha-encravada-thumb.webp", title: "Cuidado com unha encravada", alt: "Imagem de atendimento podológico para unha encravada" },
-  { file: "galeria-unha-encravada-2-thumb.webp", title: "Avaliação das unhas", alt: "Imagem de cuidado podológico das unhas" },
-  { file: "galeria-verruga-plantar-thumb.webp", title: "Cuidado podológico especializado", alt: "Imagem de atendimento relacionado à verruga plantar" },
-  { file: "galeria-fissuras-thumb.webp", title: "Cuidado com fissuras", alt: "Imagem de atendimento podológico para fissuras nos pés" },
-  { file: "galeria-fissuras-2-thumb.webp", title: "Saúde da pele dos pés", alt: "Imagem de cuidado podológico da pele dos pés" },
-  { file: "galeria-reconstrucao-unha-thumb.webp", title: "Reconstrução de unha", alt: "Imagem de procedimento de reconstrução ungueal" },
-  { file: "galeria-atendimento-thumb.webp", title: "Atendimento podológico", alt: "Imagem de atendimento podológico" },
-  { file: "galeria-atendimento-2-thumb.webp", title: "Cuidado em consultório", alt: "Imagem de atendimento em podologia" },
-  { file: "galeria-desencravamento-thumb.webp", title: "Desencravamento", alt: "Imagem de procedimento podológico de desencravamento" },
 ];
 
 const gallery = [
@@ -201,8 +189,8 @@ function Index() {
       </div></section>
 
       <section className="tc-section tc-results-section" id="resultados"><div className="tc-wrap">
-        <div className="tc-section-head tc-section-head-center"><span className="tc-kicker">RESULTADOS E EVOLUÇÃO</span><h2>Veja o cuidado <em>em cada detalhe.</em></h2><p>Um espaço para apresentar fotos reais de antes e depois dos atendimentos podológicos, sempre respeitando a individualidade de cada caso.</p></div>
-        <div className="tc-results-conveyor" aria-label="Carrossel de imagens de atendimentos podológicos"><div className="tc-results-track">{[...resultImages,...resultImages].map((item,i)=><article className="tc-result-card" key={item.title+"-"+i}><div className="tc-result-single-image"><img src={"/"+item.file} alt={item.alt} loading="lazy" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-result-image-empty")}}/></div><div className="tc-result-caption"><span>ATENDIMENTO PODOLÓGICO</span><h3>{item.title}</h3></div></article>)}</div></div>
+        <div className="tc-section-head tc-section-head-center"><span className="tc-kicker">RESULTADOS E EVOLUÇÃO</span><h2>Veja o cuidado <em>em cada detalhe.</em></h2><p>Um espaço para apresentar fotos reais de antes e depois dos atendimentos de podologia e de biomedicina estética, sempre respeitando a individualidade de cada caso.</p></div>
+        <div className="tc-results-conveyor" aria-label="Carrossel de resultados de podologia e estética"><div className="tc-results-track">{[...resultImages,...resultImages].map((item,i)=><article className="tc-result-card" key={item.title+"-"+i}><div className="tc-result-single-image"><img src={item.image} alt={item.alt} loading="lazy" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-result-image-empty")}}/></div><div className="tc-result-caption"><span>{item.tag}</span><h3>{item.title}</h3></div></article>)}</div></div>
         <p className="tc-results-note">Cada caso é único. Os resultados variam conforme a condição inicial, a avaliação e os cuidados indicados.</p>
         <div className="tc-podology-cta"><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Gostaria de agendar uma avaliação de podologia.")}>Agendar avaliação <ArrowRight size={17}/></Button></div>
       </div></section>
