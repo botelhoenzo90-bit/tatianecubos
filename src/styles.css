@@ -966,3 +966,60 @@ footer .footer-bottom{border-color:#476b56!important}
 @keyframes tc-results-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:600px){.tc-site .tc-result-card{width:300px;flex-basis:300px}.tc-site .tc-results-track{gap:14px}}
 @media(prefers-reduced-motion:reduce){.tc-site .tc-results-track{animation-duration:120s!important}}
+
+
+/* Ajustes responsivos: cards de podologia e biomedicina estética */
+.tc-site #podologia .tc-conveyor-podology .tc-service-card{
+  height:auto!important; min-height:0!important; max-height:none!important;
+  align-self:flex-start!important; justify-content:flex-start!important;
+}
+.tc-site #podologia .tc-conveyor-podology .tc-service-card .tc-procedure-image{
+  display:block; width:100%; height:168px; min-height:0; flex:0 0 168px;
+  object-fit:cover; object-position:center;
+}
+.tc-site #podologia .tc-conveyor-podology .tc-service-card .tc-procedure-copy{
+  flex:0 0 auto; padding:16px 18px 20px; gap:8px;
+}
+.tc-site #podologia .tc-conveyor-podology .tc-service-card .tc-procedure-copy h3{
+  font-size:23px; line-height:1.22;
+}
+.tc-site #podologia .tc-conveyor-podology .tc-service-card .tc-procedure-copy p{
+  font-size:15px; line-height:1.55;
+}
+.tc-site #estetica, .tc-site #estetica .tc-wrap,
+.tc-site #estetica .tc-aesthetic-layout, .tc-site #estetica .tc-aesthetic-intro,
+.tc-site #estetica .tc-aesthetic-services, .tc-site #estetica .tc-conveyor,
+.tc-site #estetica .tc-conveyor-track { min-width:0; max-width:100%; }
+.tc-site #estetica .tc-aesthetic-layout{
+  display:grid!important; grid-template-columns:minmax(0,1fr)!important;
+  width:100%; gap:28px!important;
+}
+.tc-site #estetica .tc-aesthetic-intro{width:100%; overflow-wrap:anywhere}
+.tc-site #estetica .tc-aesthetic-intro h2,
+.tc-site #estetica .tc-aesthetic-intro p{max-width:100%; overflow-wrap:anywhere}
+.tc-site #estetica .tc-aesthetic-services{width:100%; overflow:hidden}
+.tc-site #estetica .tc-conveyor-track{width:max-content; max-width:none}
+.tc-site #estetica .tc-aesthetic-card{flex-shrink:0; min-width:0}
+@media(max-width:600px){
+  .tc-site #podologia .tc-conveyor .tc-service-card{
+    width:min(280px, calc(100vw - 44px))!important;
+    min-width:min(280px, calc(100vw - 44px))!important;
+    max-width:min(280px, calc(100vw - 44px))!important;
+    flex-basis:min(280px, calc(100vw - 44px))!important;
+  }
+  .tc-site #podologia .tc-conveyor-podology .tc-service-card .tc-procedure-image{
+    height:148px; flex-basis:148px;
+  }
+  .tc-site #podologia .tc-conveyor-podology .tc-service-card .tc-procedure-copy{padding:14px 15px 17px}
+  .tc-site #podologia .tc-conveyor-podology .tc-service-card .tc-procedure-copy h3{font-size:21px}
+  .tc-site #podologia .tc-conveyor-podology .tc-service-card .tc-procedure-copy p{font-size:14px;line-height:1.5}
+  .tc-site #estetica .tc-aesthetic-intro h2{font-size:30px!important;line-height:1.2}
+  .tc-site #estetica .tc-aesthetic-intro>p{font-size:15px;line-height:1.65}
+  .tc-site #estetica .tc-aesthetic-intro .site-button{width:100%;max-width:100%;white-space:normal}
+  .tc-site #estetica .tc-conveyor .tc-aesthetic-card{
+    width:min(280px, calc(100vw - 44px))!important;
+    min-width:min(280px, calc(100vw - 44px))!important;
+    max-width:min(280px, calc(100vw - 44px))!important;
+    flex-basis:min(280px, calc(100vw - 44px))!important;
+  }
+}
