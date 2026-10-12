@@ -833,6 +833,8 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site .tc-hero-actions { margin: 14px 0 0; }
 .tc-site .tc-hero-region { font-size: 15px; }
 .tc-site .tc-section-head { margin-bottom: 24px; }
+.tc-site #podologia .tc-section-head-row { gap: 0; }
+.tc-site #podologia .tc-section-head-row > p { margin-top: 16px; }
 .tc-site h2, .tc-site .tc-section-head h2, .tc-site .tc-about-copy h2, .tc-site .tc-contact h2 { font-size: 40px; line-height: 1.2; margin: 12px 0 18px; }
 .tc-site p, .tc-site .tc-section-head p, .tc-site .tc-about-copy p, .tc-site .tc-aesthetic-intro > p, .tc-site .tc-review-side > p, .tc-site .tc-faq-intro > p, .tc-site .tc-contact-grid > div > p { font-size: 17px; line-height: 1.7; }
 .tc-site .tc-kicker, .tc-site .tc-form-kicker, .tc-site .tc-location-region { font-size: 13px; }
