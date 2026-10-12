@@ -62,9 +62,9 @@ const aestheticServices = [
 ];
 
 const testimonials = [
-  { name: "Marina S.", text: "Atendimento impecável. Meus pés nunca estiveram tão saudáveis. Profissional excepcional!" },
-  { name: "Ricardo T.", text: "Resolveu meu problema de unha encravada com técnica e zero desconforto. Recomendo de olhos fechados." },
-  { name: "Camila R.", text: "Os produtos próprios são incríveis. A hidratação dura muito mais do que qualquer creme do mercado." },
+  { name: "Paciente · Podologia", text: "A avaliação foi cuidadosa e recebi orientações claras para cuidar melhor das unhas e dos pés no dia a dia." },
+  { name: "Paciente · Estética", text: "Consegui conversar sobre minhas expectativas, entender as opções e tirar dúvidas antes de decidir o cuidado para minha pele." },
+  { name: "Paciente · Atendimento", text: "Gostei da atenção e do plano individual. Tudo foi explicado com calma, respeitando minhas necessidades e meu conforto." },
 ];
 
 const gallery = [
