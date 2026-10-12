@@ -1037,3 +1037,17 @@ footer .footer-bottom{border-color:#476b56!important}
  .tc-site .tc-result-card{width:min(300px,calc(100vw - 40px));flex-basis:min(300px,calc(100vw - 40px))}
  .tc-site .tc-result-single-image{aspect-ratio:4/3}
 }
+
+
+/* Resultados: sem brilho nas bordas e carrossel de ponta a ponta */
+.tc-site .tc-results-section{overflow:hidden!important}
+.tc-site .tc-results-section > .tc-wrap{width:100%!important;max-width:none!important;padding-inline:0!important}
+.tc-site .tc-results-section .tc-section-head,
+.tc-site .tc-results-section .tc-results-note,
+.tc-site .tc-results-section .tc-podology-cta{width:calc(100% - 40px);margin-inline:auto}
+.tc-site .tc-results-conveyor{width:100vw!important;max-width:100vw!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;padding:12px 0 24px!important;mask-image:none!important;-webkit-mask-image:none!important;overflow:hidden!important}
+.tc-site .tc-results-track{width:max-content!important;padding-inline:0!important;animation-play-state:running!important}
+.tc-site .tc-results-conveyor:hover .tc-results-track,.tc-site .tc-results-conveyor:focus-within .tc-results-track{animation-play-state:running!important}
+.tc-site .tc-result-card{box-shadow:none!important;filter:none!important;border:1px solid #d9dfcf!important}
+.tc-site .tc-result-single-image{box-shadow:none!important;filter:none!important}
+@media(max-width:600px){.tc-site .tc-results-section .tc-section-head,.tc-site .tc-results-section .tc-results-note,.tc-site .tc-results-section .tc-podology-cta{width:calc(100% - 28px)}}
