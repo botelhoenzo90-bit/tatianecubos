@@ -6,6 +6,9 @@ import resultadoLiftPlasma from "@/assets/resultado-estetica-lift-plasma.webp.as
 import resultadoLobulo from "@/assets/resultado-estetica-lobulo.webp.asset.json";
 import resultadoMaosManchas from "@/assets/resultado-estetica-maos-manchas.webp.asset.json";
 import resultadoPescoco from "@/assets/resultado-estetica-pescoco.webp.asset.json";
+import podologiaInfantil from "@/assets/podologia-infantil.png.asset.json";
+import podologiaBichoDePe from "@/assets/podologia-bicho-de-pe.png.asset.json";
+import podologiaVerrugaPlantar from "@/assets/podologia-verruga-plantar.png.asset.json";
 
 export const aestheticImages = [
   "/Consulta%20de%20Pele%20em%20Cl%C3%ADnica%20Est%C3%A9tica.png",
@@ -25,18 +28,18 @@ export const podologyImagesByService: Record<string, string> = Object.fromEntrie
     "Fissuras e rachaduras": "Pedicure Clínico com Tratamento do Calcanhar.png",
     "Micose e frieiras": "Tratamento Profissional da Unha do Pé.png",
     "Pés diabéticos": "Avaliação Podológica com Cuidado Profissional.png",
-    "Podologia infantil": "Imagem do ChatGPT 12 de out. de 2026, 15_32_38.png",
+    "Podologia infantil": podologiaInfantil.url,
     "Podologia geriátrica": "Avaliação Podológica com Cuidado Profissional.png",
     "Reconstrução de unhas": "Tratamento Podológico Profissional no Hálux.png",
     "Higienização e corte técnico": "Tratamento Podológico em Spa Clínico.png",
     "Hidratação profunda": "Massagem Relaxante para os Pés.png",
-    "Bicho de pé": "Imagem do ChatGPT 12 de out. de 2026, 15_37_31.png",
+    "Bicho de pé": podologiaBichoDePe.url,
     "Chulé e odor nos pés": "Pés Fedorentos com Bactérias Ilustradas.png",
-    "Olho de peixe (verruga plantar)": "Imagem do ChatGPT 12 de out. de 2026, 15_39_14.png",
+    "Olho de peixe (verruga plantar)": podologiaVerrugaPlantar.url,
     "Alterações e infecções da pele": "Exame Podológico com Lesões Cutâneas.png",
     "Ressecamento dos pés": "Pedicure Relaxante no Spa.png",
     "Podologia preventiva": "Avaliação Podológica com Cuidado Profissional.png",
-  }).map(([service, filename]) => [service, `/${encodeURI(filename)}`]),
+  }).map(([service, filename]) => [service, filename.startsWith("/__l5e/assets-v1/") ? filename : `/${encodeURI(filename)}`]),
 );
 
 export type ResultTag = "PODOLOGIA" | "ESTÉTICA";
