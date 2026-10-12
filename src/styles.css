@@ -609,3 +609,83 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-whatsapp-float svg{width:22px;height:22px}
 @media(max-width:850px){.tc-map-grid{grid-template-columns:1fr}.tc-hero-grid{gap:28px}.tc-logo-placeholder{margin-bottom:20px}}
 @media(max-width:600px){.tc-logo-placeholder{padding:10px 12px}.tc-logo-placeholder strong{font-size:22px}.tc-logo-placeholder em{font-size:8px}.tc-hero h1{font-size:43px}.tc-map-grid iframe{height:220px}}
+
+
+/* Revisão geral: composição centralizada e hero sem foto */
+.tc-site{text-align:center}
+.tc-site .tc-wrap{margin-left:auto;margin-right:auto}
+.tc-section-head,.tc-section-head-center{text-align:center!important;align-items:center!important;justify-content:center}
+.tc-section-head p,.tc-section-head-row>p{margin-left:auto!important;margin-right:auto!important;max-width:720px}
+.tc-hero{padding-top:52px}
+.tc-hero-grid{display:block!important;max-width:1000px;text-align:center}
+.tc-hero-copy{max-width:900px;margin:0 auto;padding:0 0 44px!important;display:flex;flex-direction:column;align-items:center}
+.tc-hero-visual{display:none!important}
+.tc-logo-placeholder{width:min(100%,620px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin:0 auto 28px;padding:24px 28px;border:1px dashed #9da987;border-radius:18px;background:rgba(255,253,247,.78)}
+.tc-logo-empty{width:74px;height:74px;display:grid;place-items:center;border:1px solid #b4bd9d;border-radius:50%;font-family:Georgia,serif;font-size:29px;color:#d7bd7c;background:#173f2e}
+.tc-logo-placeholder strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(29px,4vw,42px);color:var(--tc-green);line-height:1.1}
+.tc-logo-placeholder small{font-size:10px;letter-spacing:.13em;color:#718164}
+.tc-hero .tc-kicker{justify-content:center}
+.tc-hero h1{max-width:800px;margin:0 auto 22px;text-align:center}
+.tc-hero-lead,.tc-hero-detail{max-width:730px;margin:0 auto 18px;text-align:center}
+.tc-hero-actions{justify-content:center;flex-wrap:wrap}
+.tc-hero-proof{width:100%;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px;margin-top:34px;border-top:1px solid #d9dfd1;padding-top:24px}
+.tc-hero-proof>span{display:flex;align-items:center;justify-content:center;gap:9px;padding:11px 15px;border:1px solid #dce1d4;border-radius:999px;background:#fffdf7;color:var(--tc-green);font-size:12px}
+.tc-hero-proof>span svg{width:17px;height:17px;flex-shrink:0}
+.tc-hero-proof>span b{font-weight:600}
+.tc-hero-proof>span small{display:none}
+.tc-hero-bottom{justify-content:center;text-align:center}
+.tc-hero-bottom>div{justify-content:center}
+.tc-stats-grid>div,.tc-values,.tc-product-points,.tc-specialty-grid,.tc-service-grid,.tc-aesthetic-card-list,.tc-location-grid,.tc-how-grid{justify-items:center;text-align:center}
+.tc-about-grid,.tc-products-grid,.tc-faq-layout,.tc-contact-grid,.tc-reviews-layout,.tc-aesthetic-layout{align-items:center}
+.tc-about-copy,.tc-products-copy,.tc-faq-intro,.tc-contact-grid>div:first-child,.tc-review-side,.tc-aesthetic-intro{text-align:center;display:flex;flex-direction:column;align-items:center}
+.tc-about-visual{margin:0 auto}
+.tc-values{justify-content:center}
+.tc-service-card,.tc-aesthetic-card,.tc-specialty-card,.tc-location-card,.tc-how-grid article{align-items:center;text-align:center}
+.tc-service-card p,.tc-aesthetic-card p,.tc-specialty-card p,.tc-location-card p,.tc-how-grid article p{margin-left:auto;margin-right:auto}
+.tc-aesthetic-card-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tc-aesthetic-card{display:flex;flex-direction:column;justify-content:center;min-height:250px;padding:28px 22px}
+.tc-aesthetic-card>div{text-align:center}
+.tc-aesthetic-card .tc-aesthetic-num{position:static}
+.tc-aesthetic-services{width:100%}
+.tc-carousel-head{justify-content:center}
+.tc-carousel-controls{margin-left:12px}
+.tc-service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tc-service-card button{margin-left:auto;margin-right:auto}
+.tc-service-note{display:flex;flex-direction:column;align-items:center;text-align:center}
+.tc-map-grid{margin-left:auto;margin-right:auto}
+.tc-map-heading{justify-content:center;text-align:center}
+.tc-map-heading>div{text-align:center}
+.tc-homecare{display:flex;flex-direction:column;align-items:center;text-align:center}
+.tc-reviews-layout{grid-template-columns:minmax(0,1fr);max-width:800px;margin:0 auto}
+.tc-review-feature{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center}
+.tc-review-side{max-width:650px;margin:0 auto}
+.tc-review-benefit{justify-content:center;text-align:left}
+.tc-contact-details{width:100%;max-width:470px}
+.tc-contact-form{text-align:center}
+.tc-contact-form label{text-align:left;width:100%}
+.tc-form-row{width:100%}
+.tc-footer-grid{text-align:center;justify-items:center}
+.tc-footer-about{display:flex;flex-direction:column;align-items:center}
+.tc-footer-grid>div:not(:first-child){display:flex;flex-direction:column;align-items:center}
+.tc-footer-bottom{justify-content:center;text-align:center;flex-wrap:wrap}
+.tc-footer-note{text-align:center}
+.tc-faq-list{width:100%;text-align:left}
+.tc-whatsapp-float{width:62px!important;height:62px!important;min-width:62px!important;padding:0!important;border-radius:50%!important;display:grid!important;place-items:center!important;box-shadow:0 8px 25px #173f2e40!important}
+.tc-whatsapp-float span{display:none!important}
+.tc-whatsapp-float svg{width:27px!important;height:27px!important}
+.tc-marquee{overflow:hidden;background:#183f2f;color:#f5eedc;padding:17px 0;white-space:nowrap}
+.tc-marquee-track{display:flex;width:max-content;align-items:center;gap:28px;animation:tc-marquee-run 34s linear infinite;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.tc-marquee-track span{display:inline-block}
+.tc-marquee-track i{font-style:normal;color:#d5bc79;font-size:17px}
+@keyframes tc-marquee-run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tc-how{background:#fbf8ef}
+.tc-how-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:34px auto;max-width:1000px}
+.tc-how-grid article{padding:30px 24px;border:1px solid #dfe3d6;border-radius:18px;background:#fffdf7}
+.tc-how-grid article>span{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#e4eadb;color:var(--tc-green);font-family:Georgia,serif;font-size:20px;margin:0 auto 16px}
+.tc-how-grid h3{font-family:Georgia,serif;font-size:24px;font-weight:400;color:var(--tc-green);margin:0 0 10px}
+.tc-how-grid article p{font-size:13px;line-height:1.8;color:var(--tc-muted)}
+.tc-how>.tc-wrap>.tc-section-head{align-items:center}
+.tc-site .tc-gallery-section{display:none!important}
+.tc-site .tc-footer a[href="#galeria"]{display:none}
+@media(max-width:850px){.tc-service-grid,.tc-aesthetic-card-list,.tc-how-grid{grid-template-columns:1fr!important}.tc-aesthetic-card{min-height:0}.tc-hero-proof{gap:8px}.tc-hero-proof>span{font-size:10px;padding:9px 12px}.tc-about-grid,.tc-products-grid,.tc-faq-layout,.tc-contact-grid{grid-template-columns:1fr!important}}
+@media(max-width:600px){.tc-hero{padding-top:28px}.tc-hero-copy{padding-bottom:30px!important}.tc-logo-placeholder{padding:20px 12px}.tc-logo-placeholder small{line-height:1.7}.tc-hero h1{font-size:40px}.tc-hero-proof{display:grid;grid-template-columns:1fr 1fr}.tc-hero-proof>span{border-radius:12px;line-height:1.4}.tc-whatsapp-float{width:58px!important;height:58px!important;min-width:58px!important}}
