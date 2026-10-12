@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import tatiPortrait from "@/assets/tati-retrato.png.asset.json";
 import { clinicPhone, clinicWhatsapp } from "@/lib/clinic-contact";
-import { aestheticImages, podologyImages } from "@/lib/procedure-images";
+import { aestheticImages, podologyImages, resultImages } from "@/lib/procedure-images";
 import { credentialImages } from "@/lib/credential-images";
 
 const siteUrl = "https://tatianecubos.com.br";
@@ -78,18 +78,6 @@ const testimonials = [
   { name: "Mariana S.", text: "A avaliação da unha encravada foi feita com muito cuidado. Entendi cada etapa do atendimento e saí com orientações para manter os pés bem cuidados." },
   { name: "Camila R.", text: "Pude falar sobre manchas, textura e o que queria melhorar na pele. Recebi explicações claras sobre as possibilidades e sobre o que fazia sentido para mim." },
   { name: "Juliana M.", text: "O atendimento foi atencioso do começo ao fim. Gostei de ter um plano pensado para minhas necessidades, com recomendações práticas para continuar o cuidado em casa." },
-];
-
-const resultImages = [
-  { file: "galeria-unha-encravada-thumb.webp", title: "Cuidado com unha encravada", alt: "Imagem de atendimento podológico para unha encravada" },
-  { file: "galeria-unha-encravada-2-thumb.webp", title: "Avaliação das unhas", alt: "Imagem de cuidado podológico das unhas" },
-  { file: "galeria-verruga-plantar-thumb.webp", title: "Cuidado podológico especializado", alt: "Imagem de atendimento relacionado à verruga plantar" },
-  { file: "galeria-fissuras-thumb.webp", title: "Cuidado com fissuras", alt: "Imagem de atendimento podológico para fissuras nos pés" },
-  { file: "galeria-fissuras-2-thumb.webp", title: "Saúde da pele dos pés", alt: "Imagem de cuidado podológico da pele dos pés" },
-  { file: "galeria-reconstrucao-unha-thumb.webp", title: "Reconstrução de unha", alt: "Imagem de procedimento de reconstrução ungueal" },
-  { file: "galeria-atendimento-thumb.webp", title: "Atendimento podológico", alt: "Imagem de atendimento podológico" },
-  { file: "galeria-atendimento-2-thumb.webp", title: "Cuidado em consultório", alt: "Imagem de atendimento em podologia" },
-  { file: "galeria-desencravamento-thumb.webp", title: "Desencravamento", alt: "Imagem de procedimento podológico de desencravamento" },
 ];
 
 const gallery = [

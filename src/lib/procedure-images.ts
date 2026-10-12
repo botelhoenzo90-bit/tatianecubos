@@ -43,48 +43,63 @@ export const podologyImages = [
   podology9,
 ];
 
-export type ResultImage = { image?: string; title: string; alt: string };
+export type ResultTag = "PODOLOGIA" | "ESTÉTICA";
+export type ResultImage = { image: string; title: string; alt: string; tag: ResultTag };
 
 const podologyResults: ResultImage[] = [
   {
     image: "/galeria-unha-encravada-thumb.webp",
-    title: "Unha encravada",
-    alt: "Antes e depois de tratamento de unha encravada",
+    title: "Cuidado com unha encravada",
+    alt: "Imagem de atendimento podológico para unha encravada",
+    tag: "PODOLOGIA",
+  },
+  {
+    image: "/galeria-unha-encravada-2-thumb.webp",
+    title: "Avaliação das unhas",
+    alt: "Imagem de cuidado podológico das unhas",
+    tag: "PODOLOGIA",
   },
   {
     image: "/galeria-verruga-plantar-thumb.webp",
-    title: "Verruga plantar",
-    alt: "Antes e depois de tratamento de verruga plantar",
+    title: "Cuidado podológico especializado",
+    alt: "Imagem de atendimento relacionado à verruga plantar",
+    tag: "PODOLOGIA",
   },
   {
     image: "/galeria-fissuras-thumb.webp",
-    title: "Fissuras",
-    alt: "Antes e depois de tratamento de fissuras no pé",
+    title: "Cuidado com fissuras",
+    alt: "Imagem de atendimento podológico para fissuras nos pés",
+    tag: "PODOLOGIA",
+  },
+  {
+    image: "/galeria-fissuras-2-thumb.webp",
+    title: "Saúde da pele dos pés",
+    alt: "Imagem de cuidado podológico da pele dos pés",
+    tag: "PODOLOGIA",
   },
   {
     image: "/galeria-reconstrucao-unha-thumb.webp",
     title: "Reconstrução de unha",
-    alt: "Antes e depois de reconstrução de unha",
+    alt: "Imagem de procedimento de reconstrução ungueal",
+    tag: "PODOLOGIA",
   },
   {
     image: "/galeria-atendimento-thumb.webp",
     title: "Atendimento podológico",
-    alt: "Registro de atendimento podológico",
-  },
-  {
-    image: "/galeria-unha-encravada-2-thumb.webp",
-    title: "Unha encravada",
-    alt: "Segundo registro de tratamento de unha encravada",
-  },
-  {
-    image: "/galeria-fissuras-2-thumb.webp",
-    title: "Fissuras",
-    alt: "Segundo registro de tratamento de fissuras no pé",
+    alt: "Imagem de atendimento podológico",
+    tag: "PODOLOGIA",
   },
   {
     image: "/galeria-atendimento-2-thumb.webp",
-    title: "Atendimento podológico",
-    alt: "Segundo registro de atendimento podológico",
+    title: "Cuidado em consultório",
+    alt: "Imagem de atendimento em podologia",
+    tag: "PODOLOGIA",
+  },
+  {
+    image: "/galeria-desencravamento-thumb.webp",
+    title: "Desencravamento",
+    alt: "Imagem de procedimento podológico de desencravamento",
+    tag: "PODOLOGIA",
   },
 ];
 
@@ -93,45 +108,53 @@ const aestheticResults: ResultImage[] = [
     image: resultadoCicatrizMaos.url,
     title: "Jato de plasma — cicatrizes nas mãos",
     alt: "Antes e depois do tratamento com jato de plasma em cicatrizes das mãos",
+    tag: "ESTÉTICA",
   },
   {
     image: resultadoPescoco.url,
     title: "Jato de plasma — pescoço",
     alt: "Antes e depois do tratamento de manchas no pescoço",
+    tag: "ESTÉTICA",
   },
   {
     image: resultadoMaosManchas.url,
     title: "Manchas nas mãos",
     alt: "Antes e depois do tratamento de manchas na pele das mãos",
+    tag: "ESTÉTICA",
   },
   {
     image: resultadoLobulo.url,
     title: "Reparo do lobo da orelha",
     alt: "Antes e depois do reparo do lobo da orelha",
+    tag: "ESTÉTICA",
   },
   {
     image: resultadoAbdomen3Sessoes.url,
     title: "Jato de plasma — abdômen",
     alt: "Antes e depois do jato de plasma no abdômen após três sessões",
+    tag: "ESTÉTICA",
   },
   {
     image: resultadoAbdomen.url,
     title: "Jato de plasma — abdômen",
     alt: "Antes e depois do jato de plasma no abdômen",
+    tag: "ESTÉTICA",
   },
   {
     image: resultadoCicatrizAcne.url,
     title: "Cicatrizes de acne no rosto",
     alt: "Antes e depois do tratamento de cicatrizes de acne no rosto",
+    tag: "ESTÉTICA",
   },
   {
     image: resultadoLiftPlasma.url,
     title: "Lift plasma — contorno dos olhos",
     alt: "Antes e depois do lift plasma na região dos olhos",
+    tag: "ESTÉTICA",
   },
 ];
 
-// Ordem fixa (mesma no servidor e no navegador) que embaralha estética e podologia sem repetir.
+// Ordem fixa (igual no servidor e no navegador) que embaralha estética e podologia sem repetir.
 function seededShuffle<T>(items: T[], seed: number): T[] {
   const out = [...items];
   let state = seed;
