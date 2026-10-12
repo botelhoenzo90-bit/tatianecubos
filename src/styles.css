@@ -1118,3 +1118,31 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site .tc-credential-image:focus-visible{outline:2px solid var(--tc-gold,#8d783e);outline-offset:-3px}
 .tc-site .tc-credential-caption h3{font-size:20px}
 .tc-site .tc-credentials-conveyor{padding:14px 0 8px}
+
+
+/* Padronização de velocidade: todos os carrosséis contínuos no mesmo ritmo */
+.tc-site .tc-marquee-track,
+.tc-site .tc-conveyor-track,
+.tc-site .tc-results-track,
+.tc-site .tc-reviews-track,
+.tc-site .tc-credentials-track {
+  animation-duration: 22s !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
+  animation-direction: normal !important;
+}
+.tc-site .tc-marquee-track { animation-duration: 22s !important; }
+.tc-site .tc-conveyor-track { animation-duration: 22s !important; }
+.tc-site .tc-results-track { animation-duration: 22s !important; }
+.tc-site .tc-reviews-track { animation-duration: 22s !important; }
+.tc-site .tc-credentials-track { animation-duration: 22s !important; }
+.tc-site .tc-conveyor:hover .tc-conveyor-track,
+.tc-site .tc-results-conveyor:hover .tc-results-track,
+.tc-site .tc-reviews-conveyor:hover .tc-reviews-track,
+.tc-site .tc-credentials-conveyor:hover .tc-credentials-track,
+.tc-site .tc-conveyor:focus-within .tc-conveyor-track,
+.tc-site .tc-results-conveyor:focus-within .tc-results-track,
+.tc-site .tc-reviews-conveyor:focus-within .tc-reviews-track,
+.tc-site .tc-credentials-conveyor:focus-within .tc-credentials-track {
+  animation-play-state: running !important;
+}
