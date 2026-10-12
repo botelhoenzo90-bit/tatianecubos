@@ -703,3 +703,44 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site #estetica .tc-aesthetic-services{max-width:1100px;margin:0 auto}
 .tc-site #podologia .tc-section-head-row{display:flex;flex-direction:column;align-items:center;text-align:center}
 .tc-site #depoimentos .tc-review-controls{justify-content:center}
+
+
+/* Mídias oficiais e carrosséis em esteira contínua */
+.tc-logo-placeholder .tc-official-logo{display:block;width:min(250px,70vw);height:auto;max-height:120px;object-fit:contain;margin:0 auto 8px}
+.tc-logo-placeholder .tc-logo-empty{display:none!important}
+.tc-about-visual img{display:block!important;width:100%;height:100%;object-fit:cover;object-position:center}
+.tc-about-visual .tc-about-fallback{display:none!important}
+.tc-product-image img{display:block!important;width:100%;height:100%;object-fit:contain}
+.tc-product-image .tc-product-fallback{display:none!important}
+.tc-whatsapp-float{padding:0!important;overflow:hidden;border:0!important;background:#fff!important}
+.tc-whatsapp-float img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.tc-whatsapp-float svg{display:none!important}
+.tc-contact-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:15px;min-height:360px}
+.tc-contact-cta p{max-width:400px;line-height:1.8}
+.tc-contact-trust{display:flex;align-items:center;justify-content:center;gap:9px;font-size:12px;color:#c9d7c4;margin-top:10px}
+.tc-contact-trust svg{width:20px;flex-shrink:0}
+.tc-conveyor,.tc-reviews-conveyor{width:100%;overflow:hidden;position:relative;padding:12px 0 24px;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.tc-conveyor-track,.tc-reviews-track{display:flex;align-items:stretch;gap:20px;width:max-content;animation:tc-conveyor-left 58s linear infinite}
+.tc-conveyor:hover .tc-conveyor-track,.tc-reviews-conveyor:hover .tc-reviews-track{animation-play-state:paused}
+.tc-conveyor-aesthetic .tc-conveyor-track{animation-duration:42s}
+.tc-conveyor-podology .tc-conveyor-track{animation-duration:75s}
+.tc-conveyor .tc-aesthetic-card,.tc-conveyor .tc-service-card{width:310px;min-width:310px;max-width:310px;flex:0 0 310px;min-height:310px;margin:0;box-sizing:border-box}
+.tc-conveyor .tc-aesthetic-card{background:#f8f5eb;color:#183f2f;border:1px solid #d9dfce;border-radius:20px}
+.tc-conveyor .tc-aesthetic-card p{color:#56665a}
+.tc-conveyor .tc-service-card{background:#fffdf7;border:1px solid #e0e2d7;border-radius:20px;padding:28px 24px;box-shadow:0 12px 28px #183f2f0c}
+.tc-conveyor .tc-service-card button{margin-top:auto}
+.tc-reviews-track{animation-duration:36s}
+.tc-reviews-conveyor .tc-review-feature{width:350px;min-width:350px;max-width:350px;flex:0 0 350px;min-height:300px;padding:28px;background:#fffdf7;border:1px solid #e2dfd1;border-radius:22px;box-sizing:border-box}
+.tc-reviews-conveyor .tc-review-feature p{font-size:16px;line-height:1.8}
+.tc-reviews-conveyor .tc-review-quote{font-family:Georgia,serif;font-size:40px;line-height:.8;color:#b99b4b}
+.tc-reviews-conveyor .tc-review-stars{display:flex;gap:4px;color:#e7b529}
+.tc-reviews-conveyor .tc-review-stars svg{width:17px;height:17px}
+.tc-reviews-conveyor .tc-review-author{margin-top:auto}
+.tc-reviews-conveyor .tc-review-controls{display:none!important}
+.tc-site #depoimentos .tc-reviews-layout{display:block}
+.tc-site #depoimentos .tc-review-side{margin:28px auto 0}
+.tc-site #depoimentos .tc-review-side .tc-review-benefit{justify-content:center}
+.tc-site #depoimentos .tc-carousel-dots,.tc-site #estetica .tc-carousel-dots,.tc-site #podologia .tc-carousel-dots{display:none!important}
+@keyframes tc-conveyor-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:600px){.tc-conveyor .tc-aesthetic-card,.tc-conveyor .tc-service-card{width:270px;min-width:270px;max-width:270px;flex-basis:270px}.tc-reviews-conveyor .tc-review-feature{width:285px;min-width:285px;max-width:285px;flex-basis:285px}.tc-conveyor-track,.tc-reviews-track{gap:14px}}
+@media(prefers-reduced-motion:reduce){.tc-conveyor-track,.tc-reviews-track,.tc-marquee-track{animation-duration:120s!important}}
