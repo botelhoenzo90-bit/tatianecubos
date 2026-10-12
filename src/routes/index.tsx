@@ -79,6 +79,18 @@ const testimonials = [
   { name: "Juliana M.", text: "O atendimento foi atencioso do começo ao fim. Gostei de ter um plano pensado para minhas necessidades, com recomendações práticas para continuar o cuidado em casa." },
 ];
 
+const resultImages = [
+  { file: "galeria-unha-encravada-thumb.webp", title: "Cuidado com unha encravada", alt: "Imagem de atendimento podológico para unha encravada" },
+  { file: "galeria-unha-encravada-2-thumb.webp", title: "Avaliação das unhas", alt: "Imagem de cuidado podológico das unhas" },
+  { file: "galeria-verruga-plantar-thumb.webp", title: "Cuidado podológico especializado", alt: "Imagem de atendimento relacionado à verruga plantar" },
+  { file: "galeria-fissuras-thumb.webp", title: "Cuidado com fissuras", alt: "Imagem de atendimento podológico para fissuras nos pés" },
+  { file: "galeria-fissuras-2-thumb.webp", title: "Saúde da pele dos pés", alt: "Imagem de cuidado podológico da pele dos pés" },
+  { file: "galeria-reconstrucao-unha-thumb.webp", title: "Reconstrução de unha", alt: "Imagem de procedimento de reconstrução ungueal" },
+  { file: "galeria-atendimento-thumb.webp", title: "Atendimento podológico", alt: "Imagem de atendimento podológico" },
+  { file: "galeria-atendimento-2-thumb.webp", title: "Cuidado em consultório", alt: "Imagem de atendimento em podologia" },
+  { file: "galeria-desencravamento-thumb.webp", title: "Desencravamento", alt: "Imagem de procedimento podológico de desencravamento" },
+];
+
 const gallery = [
   { title: "Unha encravada", file: "antes-depois-unha-encravada.jpg", desc: "Comparativo antes e depois do tratamento de unha encravada" },
   { title: "Unha recuperada", file: "antes-depois-unha-recuperada.jpg", desc: "Evolução do cuidado com a unha" },
@@ -177,7 +189,7 @@ function Index() {
 
       <section className="tc-section tc-results-section" id="resultados"><div className="tc-wrap">
         <div className="tc-section-head tc-section-head-center"><span className="tc-kicker">RESULTADOS E EVOLUÇÃO</span><h2>Veja o cuidado <em>em cada detalhe.</em></h2><p>Um espaço para apresentar fotos reais de antes e depois dos atendimentos podológicos, sempre respeitando a individualidade de cada caso.</p></div>
-        <div className="tc-results-conveyor" aria-label="Carrossel de resultados antes e depois"><div className="tc-results-track">{[1,2,3,4,1,2,3,4].map((item,i)=><article className="tc-result-card" key={item+"-"+i}><div className="tc-result-pair"><div className="tc-result-photo"><span>ANTES</span><div><strong>+</strong><small>Adicionar foto</small></div></div><div className="tc-result-photo"><span>DEPOIS</span><div><strong>+</strong><small>Adicionar foto</small></div></div></div><div className="tc-result-caption"><span>RESULTADO {String(item).padStart(2,"0")}</span><h3>Antes e depois</h3><p>Insira aqui as imagens reais do atendimento.</p></div></article>)}</div></div>
+        <div className="tc-results-conveyor" aria-label="Carrossel de imagens de atendimentos podológicos"><div className="tc-results-track">{[...resultImages,...resultImages].map((item,i)=><article className="tc-result-card" key={item.file+"-"+i}><div className="tc-result-single-image"><img src={"/"+item.file} alt={item.alt} loading="lazy"/></div><div className="tc-result-caption"><span>ATENDIMENTO PODOLÓGICO</span><h3>{item.title}</h3></div></article>)}</div></div>
         <p className="tc-results-note">Cada caso é único. Os resultados variam conforme a condição inicial, a avaliação e os cuidados indicados.</p>
         <div className="tc-podology-cta"><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Gostaria de agendar uma avaliação de podologia.")}>Agendar avaliação <ArrowRight size={17}/></Button></div>
       </div></section>
