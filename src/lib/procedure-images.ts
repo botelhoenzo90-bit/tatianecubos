@@ -1,9 +1,3 @@
-import aesthetic1 from "@/assets/aesthetic-procedure-1.jpg";
-import aesthetic2 from "@/assets/aesthetic-procedure-2.jpg";
-import aesthetic3 from "@/assets/aesthetic-procedure-3.jpg";
-import aesthetic4 from "@/assets/aesthetic-procedure-4.jpg";
-import aesthetic5 from "@/assets/aesthetic-procedure-5.jpg";
-import aesthetic6 from "@/assets/aesthetic-procedure-6.jpg";
 import podology1 from "@/assets/podology-procedure-1.jpg";
 import podology2 from "@/assets/podology-procedure-2.jpg";
 import podology3 from "@/assets/podology-procedure-3.jpg";
@@ -23,12 +17,12 @@ import resultadoMaosManchas from "@/assets/resultado-estetica-maos-manchas.webp.
 import resultadoPescoco from "@/assets/resultado-estetica-pescoco.webp.asset.json";
 
 export const aestheticImages = [
-  aesthetic1,
-  aesthetic2,
-  aesthetic3,
-  aesthetic4,
-  aesthetic5,
-  aesthetic6,
+  "/Consulta%20de%20Pele%20em%20Cl%C3%ADnica%20Est%C3%A9tica.png",
+  "/Tratamento%20Facial%20em%20Cl%C3%ADnica%20de%20Est%C3%A9tica.png",
+  "/Retrato%20sereno%20em%20cl%C3%ADnica%20est%C3%A9tica.png",
+  "/Retrato%20de%20pele%20com%20hiperpigmenta%C3%A7%C3%A3o.png",
+  "/Aplica%C3%A7%C3%A3o%20Est%C3%A9tica%20na%20Testa.png",
+  "/Tratamento%20Facial%20em%20Cl%C3%ADnica%20de%20Luxo.png",
 ];
 
 export const podologyImages = [
