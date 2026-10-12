@@ -1091,3 +1091,25 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site #estetica .tc-conveyor.tc-conveyor-aesthetic{position:relative!important;left:50%!important;width:100vw!important;max-width:100vw!important;margin-left:-50vw!important;margin-right:0!important;overflow:hidden!important}
 .tc-site #estetica .tc-conveyor-track{display:flex!important;width:max-content!important;max-width:none!important}
 .tc-site #estetica .tc-aesthetic-card{flex-shrink:0!important}
+
+
+/* Carrossel de certificados e qualificações profissionais */
+.tc-site .tc-credentials-section{background:var(--paper);overflow:hidden}
+.tc-site .tc-credentials-section>.tc-wrap{width:100%;max-width:none;padding-inline:0}
+.tc-site .tc-credentials-section .tc-section-head{width:min(780px,calc(100% - 40px));margin-inline:auto}
+.tc-site .tc-credentials-conveyor{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;padding:12px 0 24px}
+.tc-site .tc-credentials-track{display:flex;align-items:stretch;gap:20px;width:max-content;animation:tc-credentials-left 42s linear infinite}
+.tc-site .tc-credentials-conveyor:hover .tc-credentials-track,.tc-site .tc-credentials-conveyor:focus-within .tc-credentials-track{animation-play-state:running}
+.tc-site .tc-credential-card{width:300px;flex:0 0 300px;overflow:hidden;border:1px solid var(--tc-line);border-radius:20px;background:var(--background)}
+.tc-site .tc-credential-image{position:relative;aspect-ratio:4/3;display:grid;place-items:center;overflow:hidden;background:#f0ecdf}
+.tc-site .tc-credential-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#f8f6ef}
+.tc-site .tc-credential-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:24px;text-align:center;color:var(--tc-green)}
+.tc-site .tc-credential-placeholder svg{width:32px;height:32px}
+.tc-site .tc-credential-placeholder strong{font-family:Georgia,serif;font-size:21px;font-weight:400}
+.tc-site .tc-credential-placeholder span{font-size:12px;line-height:1.5;color:var(--tc-muted)}
+.tc-site .tc-credential-image:not(.tc-credential-empty) .tc-credential-placeholder{display:none}
+.tc-site .tc-credential-caption{padding:16px;text-align:center}
+.tc-site .tc-credential-caption>span{font-size:10px;letter-spacing:.1em;color:#8d783e}
+.tc-site .tc-credential-caption h3{font-size:22px;line-height:1.25;margin:7px 0 0;color:var(--tc-green)}
+@keyframes tc-credentials-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:600px){.tc-site .tc-credential-card{width:260px;flex-basis:260px}.tc-site .tc-credentials-track{gap:14px}}
