@@ -179,9 +179,17 @@ function Index() {
             <p>Conheça minha trajetória profissional, cursos e certificações. Este espaço reúne os certificados para você visualizar minha formação e as qualificações que complementam meu trabalho.</p>
           </div>
           <div className="tc-credentials-conveyor" aria-label="Carrossel de certificados e qualificações">
-            <div className="tc-credentials-track">{[1,2,3,4,5,6,1,2,3,4,5,6].map((n,i)=><article className="tc-credential-card" key={n+"-"+i}>
-              <div className="tc-credential-image"><img src={`/midia/certificado-${n}.jpg`} alt={`Certificado ou qualificação profissional ${n}`} loading="lazy" onError={e=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-credential-empty")}}/><div className="tc-credential-placeholder"><Award/><strong>Certificado {n}</strong><span>Adicione certificado-{n}.jpg em public/midia</span></div></div>
-              <div className="tc-credential-caption"><span>FORMAÇÃO PROFISSIONAL</span><h3>{n===1?"Podologia":n===2?"Biomedicina":`Curso e qualificação ${n-2}`}</h3></div>
+            <div className="tc-credentials-track">{[
+              {file:"image.png",title:"Certificado profissional",alt:"Certificado profissional enviado ao GitHub"},
+              {file:"7d877015-9709-4f95-acb9-28200810ec0b.png",title:"Formação e qualificação",alt:"Documento de formação profissional enviado ao GitHub"},
+              {file:"ba6d069e-c75a-4734-94f9-b40e8820a17d.png",title:"Curso e especialização",alt:"Certificado de curso ou especialização enviado ao GitHub"},
+            ].concat([
+              {file:"image.png",title:"Certificado profissional",alt:"Certificado profissional enviado ao GitHub"},
+              {file:"7d877015-9709-4f95-acb9-28200810ec0b.png",title:"Formação e qualificação",alt:"Documento de formação profissional enviado ao GitHub"},
+              {file:"ba6d069e-c75a-4734-94f9-b40e8820a17d.png",title:"Curso e especialização",alt:"Certificado de curso ou especialização enviado ao GitHub"},
+            ]).map((item,i)=><article className="tc-credential-card" key={item.file+"-"+i}>
+              <div className="tc-credential-image"><img src={`/${item.file}`} alt={item.alt} loading="lazy"/><div className="tc-credential-placeholder"><Award/><strong>{item.title}</strong></div></div>
+              <div className="tc-credential-caption"><span>FORMAÇÃO PROFISSIONAL</span><h3>{item.title}</h3></div>
             </article>)}</div>
           </div>
         </div>
