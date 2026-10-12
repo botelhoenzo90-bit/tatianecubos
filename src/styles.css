@@ -1112,4 +1112,9 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site .tc-credential-caption>span{font-size:10px;letter-spacing:.1em;color:#8d783e}
 .tc-site .tc-credential-caption h3{font-size:22px;line-height:1.25;margin:7px 0 0;color:var(--tc-green)}
 @keyframes tc-credentials-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(max-width:600px){.tc-site .tc-credential-card{width:260px;flex-basis:260px}.tc-site .tc-credentials-track{gap:14px}}
+@media(max-width:600px){.tc-site .tc-credential-card{width:262px;flex-basis:262px}.tc-site .tc-credentials-track{gap:14px}}
+.tc-site .tc-credential-card{width:340px;flex:0 0 340px}
+.tc-site .tc-credential-image{width:100%;padding:0;border:0;display:block;cursor:pointer;font:inherit;color:inherit}
+.tc-site .tc-credential-image:focus-visible{outline:2px solid var(--tc-gold,#8d783e);outline-offset:-3px}
+.tc-site .tc-credential-caption h3{font-size:20px}
+.tc-site .tc-credentials-conveyor{padding:14px 0 8px}

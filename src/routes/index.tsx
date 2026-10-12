@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import tatiPortrait from "@/assets/tati-retrato.png.asset.json";
 import { clinicPhone, clinicWhatsapp } from "@/lib/clinic-contact";
 import { aestheticImages, podologyImages } from "@/lib/procedure-images";
+import { credentialImages } from "@/lib/credential-images";
 
 const siteUrl = "https://tatianecubos.com.br";
 const ogImage = "https://tatianecubos.lovable.app/og-image.jpg";
@@ -129,6 +130,7 @@ function Index() {
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
   const lightboxImage = lightbox === null ? undefined : gallery[lightbox];
+  const [credentialView, setCredentialView] = useState<number | null>(null);
 
   return (
     <main className="tc-site">
@@ -177,8 +179,8 @@ function Index() {
             <span className="tc-kicker">FORMAÇÃO E QUALIFICAÇÕES</span>
             <h2>Conhecimento que fortalece <em>cada cuidado.</em></h2>
             <p>Conheça minha trajetória profissional, cursos e certificações. Este espaço reúne os certificados para você visualizar minha formação e as qualificações que complementam meu trabalho.</p>
-          </div>
-
+           </div>
+          <div className="tc-credentials-conveyor" aria-label="Carrossel de certificados e qualificações"><div className="tc-credentials-track">{[...credentialImages, ...credentialImages].map((item, i) => <article className="tc-credential-card" key={item.file + "-" + i}><button type="button" className="tc-credential-image" aria-label={"Ampliar certificado de " + item.title.toLowerCase()} onClick={() => setCredentialView(i % credentialImages.length)}><img src={item.image} alt={"Certificado de " + item.title} loading="lazy" /></button><div className="tc-credential-caption"><span>{item.meta}</span><h3>{item.title}</h3></div></article>)}</div></div>
         </div>
       </section>
 
@@ -206,7 +208,7 @@ function Index() {
 
       <section className="tc-section tc-results-section" id="resultados"><div className="tc-wrap">
         <div className="tc-section-head tc-section-head-center"><span className="tc-kicker">RESULTADOS E EVOLUÇÃO</span><h2>Veja o cuidado <em>em cada detalhe.</em></h2><p>Um espaço para apresentar fotos reais de antes e depois dos atendimentos podológicos, sempre respeitando a individualidade de cada caso.</p></div>
-        <div className="tc-results-conveyor" aria-label="Carrossel de imagens de atendimentos podológicos"><div className="tc-results-track">{[...resultImages,...resultImages].map((item,i)=><article className="tc-result-card" key={item.file+"-"+i}><div className="tc-result-single-image"><img src={item.image} alt={item.alt} loading="lazy" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-result-image-empty")}}/></div><div className="tc-result-caption"><span>ATENDIMENTO PODOLÓGICO</span><h3>{item.title}</h3></div></article>)}</div></div>
+        <div className="tc-results-conveyor" aria-label="Carrossel de imagens de atendimentos podológicos"><div className="tc-results-track">{[...resultImages,...resultImages].map((item,i)=><article className="tc-result-card" key={item.title+"-"+i}><div className="tc-result-single-image"><img src={item.image} alt={item.alt} loading="lazy" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-result-image-empty")}}/></div><div className="tc-result-caption"><span>ATENDIMENTO PODOLÓGICO</span><h3>{item.title}</h3></div></article>)}</div></div>
         <p className="tc-results-note">Cada caso é único. Os resultados variam conforme a condição inicial, a avaliação e os cuidados indicados.</p>
         <div className="tc-podology-cta"><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Gostaria de agendar uma avaliação de podologia.")}>Agendar avaliação <ArrowRight size={17}/></Button></div>
       </div></section>
@@ -233,6 +235,7 @@ function Index() {
       <footer className="tc-footer"><div className="tc-wrap"><div className="tc-footer-grid"><div className="tc-footer-about"><a className="tc-brand tc-brand-footer" href="#inicio"><span className="tc-brand-mark"><Footprints/></span><span><strong>Tati Cubos</strong><small>Podologia e Cosméticos</small></span></a><p>Cuidado especializado para a saúde e a beleza dos seus pés e da sua pele, com técnica, ciência e acolhimento.</p></div><div><strong>Navegue</strong><a href="#sobre">Sobre mim</a><a href="#podologia">Podologia</a><a href="#estetica">Biomedicina estética</a><a href="#produtos">Produtos</a><a href="#locais">Onde atendo</a></div><div><strong>Atendimento</strong><span>Curitiba · Centro Cívico</span><span>São José dos Pinhais</span><span>Telêmaco Borba</span><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp: {clinicPhone}</a><a href="mailto:contato@taticubos.com.br">contato@taticubos.com.br</a></div></div><div className="tc-footer-bottom"><span>© 2026 Tati Cubos — Podologia e Cosméticos. Todos os direitos reservados.</span><span>Registro profissional informado: 170107510001/91</span></div><p className="tc-footer-note">Conteúdo informativo. Procedimentos dependem de avaliação individual; imagens e resultados não representam garantia de resultado.</p></div></footer>
 
       <button className="tc-whatsapp-float" onClick={()=>book()} aria-label="Agendar atendimento pelo WhatsApp"><img src="/whatsapp-logo-CuaKE2hX.png" alt="WhatsApp"/></button>
+      {credentialView!==null&&credentialImages[credentialView]&&<div className="tc-lightbox" role="dialog" aria-modal="true" aria-label={"Certificado: "+credentialImages[credentialView].title} onClick={()=>setCredentialView(null)}><button className="tc-lightbox-close" aria-label="Fechar imagem"><X/></button><button className="tc-lightbox-prev" aria-label="Certificado anterior" onClick={e=>{e.stopPropagation();setCredentialView((credentialView-1+credentialImages.length)%credentialImages.length)}}><ChevronLeft/></button><figure onClick={e=>e.stopPropagation()}><img src={credentialImages[credentialView].image} alt={"Certificado de "+credentialImages[credentialView].title}/><figcaption>{credentialImages[credentialView].title}</figcaption></figure><button className="tc-lightbox-next" aria-label="Próximo certificado" onClick={e=>{e.stopPropagation();setCredentialView((credentialView+1)%credentialImages.length)}}><ChevronRight/></button></div>}
       {lightbox!==null&&lightboxImage&&<div className="tc-lightbox" role="dialog" aria-modal="true" aria-label={lightboxImage.title} onClick={()=>setLightbox(null)}><button className="tc-lightbox-close" aria-label="Fechar imagem"><X/></button><button className="tc-lightbox-prev" aria-label="Imagem anterior" onClick={e=>{e.stopPropagation();setLightbox((lightbox-1+gallery.length)%gallery.length)}}><ChevronLeft/></button><figure onClick={e=>e.stopPropagation()}><img src={media+lightboxImage.file} alt={lightboxImage.desc}/><figcaption>{lightboxImage.title}</figcaption></figure><button className="tc-lightbox-next" aria-label="Próxima imagem" onClick={e=>{e.stopPropagation();setLightbox((lightbox+1)%gallery.length)}}><ChevronRight/></button></div>}
     </main>
   );
