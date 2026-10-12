@@ -161,7 +161,10 @@ function seededShuffle<T>(items: T[], seed: number): T[] {
   for (let i = out.length - 1; i > 0; i -= 1) {
     state = (state * 1664525 + 1013904223) % 4294967296;
     const swap = state % (i + 1);
-    [out[i], out[swap]] = [out[swap], out[i]];
+    const current = out[i] as T;
+    const other = out[swap] as T;
+    out[i] = other;
+    out[swap] = current;
   }
   return out;
 }
