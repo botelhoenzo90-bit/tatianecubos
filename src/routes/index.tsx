@@ -80,21 +80,21 @@ const testimonials = [
 ];
 
 const resultImages = [
-  { file: "galeria-unha-encravada-thumb.webp", title: "Cuidado com unha encravada", alt: "Imagem de atendimento podológico para unha encravada" },
-  { file: "galeria-unha-encravada-2-thumb.webp", title: "Avaliação das unhas", alt: "Imagem de cuidado podológico das unhas" },
-  { file: "galeria-verruga-plantar-thumb.webp", title: "Cuidado podológico especializado", alt: "Imagem de atendimento relacionado à verruga plantar" },
-  { file: "galeria-fissuras-thumb.webp", title: "Cuidado com fissuras", alt: "Imagem de atendimento podológico para fissuras nos pés" },
-  { file: "galeria-fissuras-2-thumb.webp", title: "Saúde da pele dos pés", alt: "Imagem de cuidado podológico da pele dos pés" },
-  { file: "galeria-reconstrucao-unha-thumb.webp", title: "Reconstrução de unha", alt: "Imagem de procedimento de reconstrução ungueal" },
-  { file: "galeria-atendimento-thumb.webp", title: "Atendimento podológico", alt: "Imagem de atendimento podológico" },
-  { file: "galeria-atendimento-2-thumb.webp", title: "Cuidado em consultório", alt: "Imagem de atendimento em podologia" },
-  { file: "galeria-desencravamento-thumb.webp", title: "Desencravamento", alt: "Imagem de procedimento podológico de desencravamento" },
-  { file: "aesthetic-procedure-1.jpg", title: "Cuidado estético facial", alt: "Imagem ilustrativa de procedimento estético facial" },
-  { file: "aesthetic-procedure-2.jpg", title: "Hidratação e qualidade da pele", alt: "Imagem ilustrativa de cuidado estético da pele" },
-  { file: "aesthetic-procedure-3.jpg", title: "Tratamento estético", alt: "Imagem ilustrativa de procedimento de biomedicina estética" },
-  { file: "aesthetic-procedure-4.jpg", title: "Cuidado facial personalizado", alt: "Imagem ilustrativa de cuidado facial" },
-  { file: "aesthetic-procedure-5.jpg", title: "Pele e bem-estar", alt: "Imagem ilustrativa de tratamento estético" },
-  { file: "aesthetic-procedure-6.jpg", title: "Avaliação estética", alt: "Imagem ilustrativa de avaliação estética" },
+  { image: podologyImages[0], title: "Cuidado com unha encravada", alt: "Imagem de atendimento podológico para unha encravada" },
+  { image: podologyImages[1], title: "Avaliação das unhas", alt: "Imagem de cuidado podológico das unhas" },
+  { image: podologyImages[2], title: "Cuidado podológico especializado", alt: "Imagem de atendimento podológico" },
+  { image: podologyImages[3], title: "Cuidado com fissuras", alt: "Imagem de atendimento podológico para fissuras nos pés" },
+  { image: podologyImages[4], title: "Saúde da pele dos pés", alt: "Imagem de cuidado podológico da pele dos pés" },
+  { image: podologyImages[5], title: "Reconstrução de unha", alt: "Imagem de procedimento de reconstrução ungueal" },
+  { image: podologyImages[6], title: "Atendimento podológico", alt: "Imagem de atendimento podológico" },
+  { image: podologyImages[7], title: "Cuidado em consultório", alt: "Imagem de atendimento em podologia" },
+  { image: podologyImages[8], title: "Desencravamento", alt: "Imagem de procedimento podológico" },
+  { image: aestheticImages[0], title: "Cuidado estético facial", alt: "Imagem ilustrativa de procedimento estético facial" },
+  { image: aestheticImages[1], title: "Hidratação e qualidade da pele", alt: "Imagem ilustrativa de cuidado estético da pele" },
+  { image: aestheticImages[2], title: "Tratamento estético", alt: "Imagem ilustrativa de procedimento de biomedicina estética" },
+  { image: aestheticImages[3], title: "Cuidado facial personalizado", alt: "Imagem ilustrativa de cuidado facial" },
+  { image: aestheticImages[4], title: "Pele e bem-estar", alt: "Imagem ilustrativa de tratamento estético" },
+  { image: aestheticImages[5], title: "Avaliação estética", alt: "Imagem ilustrativa de avaliação estética" },
 ];
 
 const gallery = [
@@ -178,20 +178,7 @@ function Index() {
             <h2>Conhecimento que fortalece <em>cada cuidado.</em></h2>
             <p>Conheça minha trajetória profissional, cursos e certificações. Este espaço reúne os certificados para você visualizar minha formação e as qualificações que complementam meu trabalho.</p>
           </div>
-          <div className="tc-credentials-conveyor" aria-label="Carrossel de certificados e qualificações">
-            <div className="tc-credentials-track">{[
-              {file:"image.png",title:"Certificado profissional",alt:"Certificado profissional enviado ao GitHub"},
-              {file:"7d877015-9709-4f95-acb9-28200810ec0b.png",title:"Formação e qualificação",alt:"Documento de formação profissional enviado ao GitHub"},
-              {file:"ba6d069e-c75a-4734-94f9-b40e8820a17d.png",title:"Curso e especialização",alt:"Certificado de curso ou especialização enviado ao GitHub"},
-            ].concat([
-              {file:"image.png",title:"Certificado profissional",alt:"Certificado profissional enviado ao GitHub"},
-              {file:"7d877015-9709-4f95-acb9-28200810ec0b.png",title:"Formação e qualificação",alt:"Documento de formação profissional enviado ao GitHub"},
-              {file:"ba6d069e-c75a-4734-94f9-b40e8820a17d.png",title:"Curso e especialização",alt:"Certificado de curso ou especialização enviado ao GitHub"},
-            ]).map((item,i)=><article className="tc-credential-card" key={item.file+"-"+i}>
-              <div className="tc-credential-image"><img src={`/${item.file}`} alt={item.alt} loading="lazy"/><div className="tc-credential-placeholder"><Award/><strong>{item.title}</strong></div></div>
-              <div className="tc-credential-caption"><span>FORMAÇÃO PROFISSIONAL</span><h3>{item.title}</h3></div>
-            </article>)}</div>
-          </div>
+
         </div>
       </section>
 
@@ -219,7 +206,7 @@ function Index() {
 
       <section className="tc-section tc-results-section" id="resultados"><div className="tc-wrap">
         <div className="tc-section-head tc-section-head-center"><span className="tc-kicker">RESULTADOS E EVOLUÇÃO</span><h2>Veja o cuidado <em>em cada detalhe.</em></h2><p>Um espaço para apresentar fotos reais de antes e depois dos atendimentos podológicos, sempre respeitando a individualidade de cada caso.</p></div>
-        <div className="tc-results-conveyor" aria-label="Carrossel de imagens de atendimentos podológicos"><div className="tc-results-track">{[...resultImages,...resultImages].map((item,i)=><article className="tc-result-card" key={item.file+"-"+i}><div className="tc-result-single-image"><img src={"/"+item.file} alt={item.alt} loading="lazy"/></div><div className="tc-result-caption"><span>ATENDIMENTO PODOLÓGICO</span><h3>{item.title}</h3></div></article>)}</div></div>
+        <div className="tc-results-conveyor" aria-label="Carrossel de imagens de atendimentos podológicos"><div className="tc-results-track">{[...resultImages,...resultImages].map((item,i)=><article className="tc-result-card" key={item.file+"-"+i}><div className="tc-result-single-image"><img src={item.image} alt={item.alt} loading="lazy" onError={(e)=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-result-image-empty")}}/></div><div className="tc-result-caption"><span>ATENDIMENTO PODOLÓGICO</span><h3>{item.title}</h3></div></article>)}</div></div>
         <p className="tc-results-note">Cada caso é único. Os resultados variam conforme a condição inicial, a avaliação e os cuidados indicados.</p>
         <div className="tc-podology-cta"><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Gostaria de agendar uma avaliação de podologia.")}>Agendar avaliação <ArrowRight size={17}/></Button></div>
       </div></section>
