@@ -1,7 +1,7 @@
 ## Ajustes solicitados
 - [x] Ajustar margens e leitura, foto de Tati, cards compactos, vídeo vertical, textos e posição do atendimento domiciliar.
 - [x] Colocar as 4 fotos reais de certificados no carrossel da seção Formação, com ampliação ao clicar.
-- [ ] Adicionar carrosséis de resultados após os procedimentos — aguarda fotos reais que a usuária enviará depois.
+- [x] Misturar as fotos reais de estética (jato de plasma, manchas, cicatrizes, reparo do lobo da orelha) com as de podologia no carrossel de resultados, em ordem embaralhada e sem repetir.
 - [ ] Tati Cubos: retirar indicadores iniciais e numeração, renovar cards com imagens e textos, mover avaliações após Podologia, simplificar produtos e ajustar locais e agendamento.
 - [x] Clarear os fundos em bege, diferenciar Conhecer o processo, corrigir setas laterais e conferir SEO na prévia e no site publicado.
 - [x] Configurar e verificar SEO local, metadados, dados estruturados e sitemap na prévia.
