@@ -36,7 +36,7 @@ export const podologyImagesByService: Record<string, string> = Object.fromEntrie
     "Alterações e infecções da pele": "Exame Podológico com Lesões Cutâneas.png",
     "Ressecamento dos pés": "Pedicure Relaxante no Spa.png",
     "Podologia preventiva": "Avaliação Podológica com Cuidado Profissional.png",
-  }).map(([service, filename]) => [service, `/${encodeURIComponent(filename)}`]),
+  }).map(([service, filename]) => [service, `/${encodeURI(filename)}`]),
 );
 
 export type ResultTag = "PODOLOGIA" | "ESTÉTICA";
