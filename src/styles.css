@@ -744,3 +744,53 @@ footer .footer-bottom{border-color:#476b56!important}
 @keyframes tc-conveyor-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:600px){.tc-conveyor .tc-aesthetic-card,.tc-conveyor .tc-service-card{width:270px;min-width:270px;max-width:270px;flex-basis:270px}.tc-reviews-conveyor .tc-review-feature{width:285px;min-width:285px;max-width:285px;flex-basis:285px}.tc-conveyor-track,.tc-reviews-track{gap:14px}}
 @media(prefers-reduced-motion:reduce){.tc-conveyor-track,.tc-reviews-track,.tc-marquee-track{animation-duration:120s!important}}
+
+
+/* Ajustes finais: hero, logo transparente, legibilidade e esteiras sem pausa */
+.tc-hero{overflow:hidden;width:100%;max-width:100vw}
+.tc-hero .tc-logo-placeholder{width:min(100%,620px);border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:0 auto 30px!important}
+.tc-hero .tc-official-logo{width:min(340px,78vw)!important;max-height:155px!important;object-fit:contain!important;background:transparent!important;mix-blend-mode:multiply}
+.tc-hero .tc-logo-placeholder strong,.tc-hero .tc-logo-placeholder small{display:none!important}
+.tc-hero h1{max-width:900px;font-size:clamp(38px,5vw,65px);line-height:1.1;overflow-wrap:anywhere}
+.tc-hero-lead{font-size:clamp(17px,2vw,21px)!important;line-height:1.7!important}
+.tc-hero-detail{font-size:15px!important;line-height:1.95!important}
+.tc-hero-proof,.tc-hero-bottom{display:none!important}
+.tc-product-visual{display:flex!important;align-items:center;justify-content:center;min-height:220px}
+.tc-product-orbit{position:absolute;width:220px;height:220px;border-radius:50%;background:#dfe6d5}
+.tc-product-tag{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;background:#fffdf7;border:1px solid #d6ddcb;border-radius:20px;padding:35px;box-shadow:0 18px 42px #183f2f12}
+.tc-product-tag span{font-size:10px;letter-spacing:.15em;color:#71845f}
+.tc-product-tag strong{font:32px Georgia,serif;color:#183f2f;margin:10px 0}
+.tc-product-tag small{max-width:220px;color:#596b56;line-height:1.7}
+.tc-whatsapp-float{border-radius:50%!important;background:transparent!important;box-shadow:0 7px 24px #183f2f35!important}
+.tc-whatsapp-float img{border-radius:50%!important;border:0!important;outline:0!important;box-shadow:none!important;mix-blend-mode:multiply}
+.tc-conveyor,.tc-reviews-conveyor{width:100%;max-width:100vw;overflow:hidden;margin-inline:0;padding-inline:0;mask-image:none!important;-webkit-mask-image:none!important}
+.tc-conveyor-track,.tc-reviews-track{animation-play-state:running!important;will-change:transform}
+.tc-conveyor:hover .tc-conveyor-track,.tc-reviews-conveyor:hover .tc-reviews-track{animation-play-state:running!important}
+.tc-carousel-controls,.tc-carousel-dots,.tc-review-controls{display:none!important}
+.tc-conveyor .tc-aesthetic-card,.tc-conveyor .tc-service-card{flex-shrink:0}
+.tc-site,.tc-site *{box-sizing:border-box}
+.tc-site{width:100%;max-width:100%;overflow-x:clip}
+.tc-site section,.tc-site footer{max-width:100%;min-width:0}
+.tc-site .tc-wrap{width:min(100% - 40px,1160px);max-width:1160px}
+.tc-site img, .tc-site iframe{max-width:100%}
+.tc-about-grid,.tc-products-grid,.tc-contact-grid,.tc-faq-layout,.tc-aesthetic-layout,.tc-reviews-layout{min-width:0;max-width:100%}
+.tc-about-copy,.tc-products-copy,.tc-aesthetic-intro,.tc-review-side,.tc-contact-grid>div{min-width:0;overflow-wrap:anywhere}
+.tc-site h1,.tc-site h2,.tc-site h3,.tc-site p,.tc-site a,.tc-site span{overflow-wrap:anywhere}
+.tc-site .tc-section-head{max-width:100%;margin-inline:auto}
+.tc-site .tc-service-card p,.tc-site .tc-aesthetic-card p{color:#46584a!important}
+.tc-site .tc-section-dark .tc-kicker-light,.tc-site .tc-section-dark .tc-small-note{color:#e3e8dc!important}
+.tc-site .tc-section-dark h2,.tc-site .tc-section-dark h3,.tc-site .tc-section-dark p{color:#f8f5eb}
+.tc-site .tc-section-dark .tc-aesthetic-card h3{color:#183f2f!important}
+.tc-site .tc-section-dark .tc-aesthetic-card p{color:#46584a!important}
+.tc-site .tc-section-dark .tc-carousel-head span{color:#f8f5eb!important}
+.tc-site .tc-location-card p,.tc-site .tc-faq-item p,.tc-site .tc-about-copy p,.tc-site .tc-products-copy p{color:#46584a}
+.tc-site .tc-contact h2,.tc-site .tc-contact p,.tc-site .tc-contact small,.tc-site .tc-contact strong{color:#f8f5eb}
+.tc-site .tc-contact-form h3,.tc-site .tc-contact-form p{color:#183f2f}
+.tc-site .tc-contact-form{background:#f7f3e8}
+.tc-site .tc-contact-form .tc-form-kicker{color:#71845f}
+.tc-site .tc-section .tc-kicker{color:#657b55}
+.tc-site .tc-section-dark .tc-kicker{color:#d5bc79}
+.tc-site .tc-section-dark .tc-aesthetic-card .tc-aesthetic-num{color:#657b55}
+.tc-site .tc-footer a,.tc-site .tc-footer span,.tc-site .tc-footer p{overflow-wrap:anywhere}
+@media(max-width:850px){.tc-site .tc-wrap{width:calc(100% - 32px)}.tc-hero h1{font-size:clamp(35px,8vw,48px)}.tc-hero-copy{padding-inline:0!important}.tc-site .tc-products-grid,.tc-site .tc-about-grid{grid-template-columns:1fr!important}}
+@media(max-width:520px){.tc-site .tc-wrap{width:calc(100% - 28px)}.tc-conveyor .tc-aesthetic-card,.tc-conveyor .tc-service-card{width:260px;min-width:260px;max-width:260px;flex-basis:260px}.tc-reviews-conveyor .tc-review-feature{width:270px;min-width:270px;max-width:270px;flex-basis:270px}.tc-hero .tc-official-logo{width:min(285px,78vw)!important}.tc-hero h1{font-size:35px}.tc-hero-detail{font-size:14px!important}}
