@@ -20,7 +20,7 @@ export const aestheticImages = [
 export const podologyImagesByService: Record<string, string> = Object.fromEntries(
   Object.entries({
     "Unhas encravadas": "Tratamento Profissional de Unha Encravada.png",
-    "Órtese ungueal": "Aplicação de órtese corretiva na unha א.png",
+    "Órtese ungueal": "Aplicação de órtese no hálux.png",
     "Calos e calosidades": "Tratamento de Calo em Clínica Podológica.png",
     "Fissuras e rachaduras": "Pedicure Clínico com Tratamento do Calcanhar.png",
     "Micose e frieiras": "Tratamento Profissional da Unha do Pé.png",
