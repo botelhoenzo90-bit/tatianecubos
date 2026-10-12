@@ -1146,3 +1146,114 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site .tc-credentials-conveyor:focus-within .tc-credentials-track {
   animation-play-state: running !important;
 }
+
+
+/* Padronização global dos carrosséis e dos cards de procedimentos */
+.tc-site .tc-marquee-track,
+.tc-site .tc-conveyor-track,
+.tc-site .tc-results-track,
+.tc-site .tc-reviews-track,
+.tc-site .tc-credentials-track,
+.tc-site .issue-track,
+.tc-site .review-track,
+.tc-site .marquee > div {
+  animation-duration: 30s !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
+  animation-direction: normal !important;
+  animation-play-state: running !important;
+}
+.tc-site .tc-conveyor:hover .tc-conveyor-track,
+.tc-site .tc-results-conveyor:hover .tc-results-track,
+.tc-site .tc-reviews-conveyor:hover .tc-reviews-track,
+.tc-site .tc-credentials-conveyor:hover .tc-credentials-track,
+.tc-site .issue-window:hover .issue-track,
+.tc-site .review-window:hover .review-track,
+.tc-site .tc-conveyor:focus-within .tc-conveyor-track,
+.tc-site .tc-results-conveyor:focus-within .tc-results-track,
+.tc-site .tc-reviews-conveyor:focus-within .tc-reviews-track,
+.tc-site .tc-credentials-conveyor:focus-within .tc-credentials-track {
+  animation-play-state: running !important;
+}
+
+/* Todos os cards de procedimentos com largura, altura e área de imagem uniformes */
+.tc-site #estetica .tc-aesthetic-card,
+.tc-site #podologia .tc-service-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+  height: 390px !important;
+  min-height: 390px !important;
+  max-height: 390px !important;
+  overflow: hidden !important;
+}
+.tc-site #estetica .tc-aesthetic-card .tc-procedure-image,
+.tc-site #podologia .tc-service-card .tc-procedure-image {
+  display: block !important;
+  width: 100% !important;
+  height: 190px !important;
+  min-height: 190px !important;
+  max-height: 190px !important;
+  flex: 0 0 190px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+.tc-site #estetica .tc-aesthetic-card .tc-procedure-copy,
+.tc-site #podologia .tc-service-card .tc-procedure-copy {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  padding: 16px 18px 18px !important;
+  gap: 8px !important;
+}
+.tc-site #estetica .tc-aesthetic-card .tc-procedure-copy h3,
+.tc-site #podologia .tc-service-card .tc-procedure-copy h3 {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  overflow: hidden !important;
+  min-height: 2.45em !important;
+  max-height: 2.45em !important;
+  margin: 0 !important;
+  line-height: 1.22 !important;
+}
+.tc-site #estetica .tc-aesthetic-card .tc-procedure-copy p,
+.tc-site #podologia .tc-service-card .tc-procedure-copy p {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+.tc-site .tc-result-card,
+.tc-site .tc-credential-card,
+.tc-site .tc-review-feature {
+  align-self: stretch !important;
+}
+.tc-site .tc-result-single-image img,
+.tc-site .tc-credential-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+@media (max-width: 850px) {
+  .tc-site #estetica .tc-aesthetic-card,
+  .tc-site #podologia .tc-service-card {
+    height: 370px !important;
+    min-height: 370px !important;
+    max-height: 370px !important;
+  }
+  .tc-site #estetica .tc-aesthetic-card .tc-procedure-image,
+  .tc-site #podologia .tc-service-card .tc-procedure-image {
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
+    flex-basis: 170px !important;
+  }
+}
