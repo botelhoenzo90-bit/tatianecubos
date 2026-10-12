@@ -62,9 +62,9 @@ const aestheticServices = [
 ];
 
 const testimonials = [
-  { name: "Paciente · Podologia", text: "A avaliação foi cuidadosa e recebi orientações claras para cuidar melhor das unhas e dos pés no dia a dia." },
-  { name: "Paciente · Estética", text: "Consegui conversar sobre minhas expectativas, entender as opções e tirar dúvidas antes de decidir o cuidado para minha pele." },
-  { name: "Paciente · Atendimento", text: "Gostei da atenção e do plano individual. Tudo foi explicado com calma, respeitando minhas necessidades e meu conforto." },
+  { name: "Paciente · Unhas e pés", text: "A avaliação da unha encravada foi feita com muito cuidado. Entendi cada etapa do atendimento e saí com orientações para manter os pés bem cuidados." },
+  { name: "Paciente · Estética facial", text: "Pude falar sobre manchas, textura e o que queria melhorar na pele. Recebi explicações claras sobre as possibilidades e sobre o que fazia sentido para mim." },
+  { name: "Paciente · Cuidado contínuo", text: "O atendimento foi atencioso do começo ao fim. Gostei de ter um plano pensado para minhas necessidades, com recomendações práticas para continuar o cuidado em casa." },
 ];
 
 const gallery = [
