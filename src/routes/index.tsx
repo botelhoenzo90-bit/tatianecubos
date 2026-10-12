@@ -43,6 +43,11 @@ const podologyServices = [
   { title: "Reconstrução de unhas", text: "Técnica estética aplicada após avaliação das condições da unha e da indicação para o caso.", icon: Sparkles },
   { title: "Higienização e corte técnico", text: "Limpeza e corte adequados para manter as unhas e os pés bem cuidados.", icon: Check },
   { title: "Hidratação profunda", text: "Cuidados para melhorar o ressecamento e preservar a maciez e a integridade da pele.", icon: HeartPulse },
+  { title: "Bicho de pé", text: "Avaliação da região afetada e orientação sobre a conduta segura ou o encaminhamento adequado para cada caso.", icon: Microscope },
+  { title: "Chulé e odor nos pés", text: "Orientações de higiene, secagem e cuidados com a pele para ajudar a controlar o odor e reduzir fatores associados.", icon: Sparkles },
+  { title: "Olho de peixe (verruga plantar)", text: "Avaliação de lesões na sola dos pés para orientar o cuidado apropriado e, quando necessário, encaminhar para avaliação médica.", icon: Microscope },
+  { title: "Alterações e infecções da pele", text: "Observação de sinais como vermelhidão, descamação ou desconforto, com orientação e encaminhamento profissional quando indicado.", icon: ShieldCheck },
+  { title: "Ressecamento dos pés", text: "Cuidados para pele áspera e ressecada, com hidratação e recomendações para a rotina em casa.", icon: HeartPulse },
   { title: "Podologia preventiva", text: "Orientações e cuidados regulares para observar alterações e ajudar a evitar problemas recorrentes.", icon: ShieldCheck },
 ];
 
