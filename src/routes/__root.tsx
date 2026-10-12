@@ -13,8 +13,8 @@ export const Route=createRootRouteWithContext<{queryClient:QueryClient}>()({
  head:()=>({meta:[
   {charSet:"utf-8"},{name:"viewport",content:"width=device-width, initial-scale=1"},
   {name:"author",content:"Herbsten Rozamato Sousa"},
-  {property:"og:site_name",content:"Herbsten Rozamato Sousa — Psicanálise e Terapias"}
- ],links:[{rel:"stylesheet",href:appCss},{rel:"icon",href:"/favicon.png?v=rozamato",type:"image/png"}]}),
+  {property:"og:site_name",content:"Tati Cubos — Podologia e Biomedicina Estética"}
+ ],links:[{rel:"stylesheet",href:appCss},{rel:"icon",type:"image/png",sizes:"64x64",href:"/favicon.png?v=taticubos"},{rel:"apple-touch-icon",type:"image/png",sizes:"180x180",href:"/apple-touch-icon.png"}]}),
  shellComponent:RootShell,component:RootComponent,notFoundComponent:NotFoundComponent,errorComponent:ErrorComponent
 });
 function RootShell({children}:{children:ReactNode}){return <html lang="pt-BR"><head><HeadContent/></head><body>{children}<Scripts/></body></html>}

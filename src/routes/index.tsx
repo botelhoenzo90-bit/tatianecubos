@@ -12,6 +12,8 @@ import { clinicPhone, clinicWhatsapp } from "@/lib/clinic-contact";
 import { aestheticImages, podologyImages } from "@/lib/procedure-images";
 
 const siteUrl = "https://tatianecubos.com.br";
+const ogImage = "https://tatianecubos.lovable.app/og-image.jpg";
+const ogImageAlt = "Tati Cubos — Biomédica e Podóloga";
 const whatsapp = clinicWhatsapp;
 const instagram = "https://www.instagram.com/podologa_tati.cubos/";
 const media = "/midia/";
@@ -28,6 +30,12 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:locale", content: "pt_BR" },
+      { property: "og:image", content: ogImage },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: ogImageAlt },
+      { name: "twitter:image", content: ogImage },
+      { name: "twitter:image:alt", content: ogImageAlt },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#183f2f" },
     ],
