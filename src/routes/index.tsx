@@ -89,6 +89,12 @@ const resultImages = [
   { file: "galeria-atendimento-thumb.webp", title: "Atendimento podológico", alt: "Imagem de atendimento podológico" },
   { file: "galeria-atendimento-2-thumb.webp", title: "Cuidado em consultório", alt: "Imagem de atendimento em podologia" },
   { file: "galeria-desencravamento-thumb.webp", title: "Desencravamento", alt: "Imagem de procedimento podológico de desencravamento" },
+  { file: "aesthetic-procedure-1.jpg", title: "Cuidado estético facial", alt: "Imagem ilustrativa de procedimento estético facial" },
+  { file: "aesthetic-procedure-2.jpg", title: "Hidratação e qualidade da pele", alt: "Imagem ilustrativa de cuidado estético da pele" },
+  { file: "aesthetic-procedure-3.jpg", title: "Tratamento estético", alt: "Imagem ilustrativa de procedimento de biomedicina estética" },
+  { file: "aesthetic-procedure-4.jpg", title: "Cuidado facial personalizado", alt: "Imagem ilustrativa de cuidado facial" },
+  { file: "aesthetic-procedure-5.jpg", title: "Pele e bem-estar", alt: "Imagem ilustrativa de tratamento estético" },
+  { file: "aesthetic-procedure-6.jpg", title: "Avaliação estética", alt: "Imagem ilustrativa de avaliação estética" },
 ];
 
 const gallery = [
