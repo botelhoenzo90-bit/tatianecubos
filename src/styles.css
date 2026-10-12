@@ -862,3 +862,28 @@ footer .footer-bottom{border-color:#476b56!important}
  .tc-procedure-copy h3{font-size:21px!important}
  .tc-conveyor .tc-service-card button{margin:0 17px 16px!important}
 }
+
+
+/* Refinamento final: mídia, carrosséis e locais */
+.tc-about-visual>img{width:100%;height:100%;min-height:420px;object-fit:cover;object-position:center;border-radius:22px}
+.tc-about-visual .tc-about-fallback{display:none!important}
+.tc-product-line{background:#f5f2e8!important;background-image:none!important}
+.tc-product-line-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(28px,5vw,70px)}
+.tc-product-line-visual{min-width:0}
+.tc-product-line-visual img{display:block;width:100%;height:420px;object-fit:contain;object-position:center;border-radius:20px;background:transparent}
+.tc-product-line-copy h2{margin:12px 0 18px;font-family:Georgia,serif;font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.15;color:#183f2f}
+.tc-product-line-copy h2 em{color:#8a7135}
+.tc-product-line-copy p{margin:0 0 24px;max-width:540px;color:#526052;line-height:1.8}
+.tc-video-future-frame{padding:0!important;overflow:hidden!important;min-width:0;aspect-ratio:16/9;border-radius:22px;background:#e8e6dc}
+.tc-video-future-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#171a17}
+.tc-conveyor .tc-aesthetic-card,.tc-conveyor .tc-service-card{height:430px!important;min-height:430px!important;max-height:430px!important}
+.tc-procedure-image{height:185px!important;min-height:185px!important;max-height:185px!important;flex-basis:185px!important}
+.tc-procedure-copy{padding:19px 20px 14px!important}
+.tc-site #locais .tc-location-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch!important;gap:20px!important}
+.tc-site #locais .tc-location-card{box-sizing:border-box!important;width:100%!important;min-width:0!important;height:100%!important;min-height:310px!important;max-width:none!important;padding:26px 20px!important;display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+.tc-site #locais .tc-location-card h3{min-height:2.5em!important;display:flex;align-items:center;justify-content:center}
+.tc-site #locais .tc-location-card p{min-height:76px!important;display:flex;align-items:center;justify-content:center;overflow-wrap:anywhere}
+.tc-site #locais .tc-location-card>a{margin-top:auto!important}
+.tc-site #depoimentos .tc-review-author small{display:none!important}
+@media(max-width:800px){.tc-product-line-grid{grid-template-columns:1fr!important}.tc-product-line-visual img{height:300px}.tc-site #locais .tc-location-grid{grid-template-columns:1fr!important}.tc-site #locais .tc-location-card{min-height:260px!important}}
+@media(max-width:600px){.tc-about-visual>img{min-height:300px}.tc-conveyor .tc-aesthetic-card,.tc-conveyor .tc-service-card{height:415px!important;min-height:415px!important;max-height:415px!important}.tc-procedure-image{height:165px!important;min-height:165px!important;max-height:165px!important;flex-basis:165px!important}.tc-product-line-visual img{height:250px}}
