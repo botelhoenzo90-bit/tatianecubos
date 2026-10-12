@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import {
-  ArrowDown, ArrowRight, Award, BadgeCheck, CalendarDays, Check, ChevronDown,
+  ArrowDown, ArrowRight, Award, BadgeCheck, Check, ChevronDown,
   ChevronLeft, ChevronRight, Clock3, Footprints, Heart, HeartPulse, MapPin,
-  Menu, MessageCircle, Microscope, Package, Play, ShieldCheck, Sparkles, Star,
+  Menu, MessageCircle, Microscope, Package, ShieldCheck, Sparkles, Star,
   Stethoscope, Syringe, X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -98,7 +98,7 @@ function Index() {
   const [lightbox, setLightbox] = useState<number | null>(null);
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
 
-  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const message = `Olá, Tati! Meu nome é ${form.name}. Telefone: ${form.phone}. E-mail: ${form.email || "não informado"}. Minha mensagem: ${form.message}`;
     book(message);
