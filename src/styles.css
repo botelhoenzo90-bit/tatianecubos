@@ -1257,3 +1257,29 @@ footer .footer-bottom{border-color:#476b56!important}
     flex-basis: 170px !important;
   }
 }
+
+
+/* Faixa entre a primeira e a segunda seção: movimento realmente contínuo */
+.tc-site .tc-marquee {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.tc-site .tc-marquee-track {
+  display: flex !important;
+  align-items: center;
+  width: max-content !important;
+  max-width: none !important;
+  white-space: nowrap;
+  animation: tc-marquee-infinite 28s linear infinite !important;
+  animation-play-state: running !important;
+  will-change: transform;
+}
+.tc-site .tc-marquee:hover .tc-marquee-track,
+.tc-site .tc-marquee:focus-within .tc-marquee-track {
+  animation-play-state: running !important;
+}
+@keyframes tc-marquee-infinite {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
