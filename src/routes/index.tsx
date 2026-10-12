@@ -74,9 +74,9 @@ const aestheticServices = [
 ];
 
 const testimonials = [
-  { name: "Paciente · Unhas e pés", text: "A avaliação da unha encravada foi feita com muito cuidado. Entendi cada etapa do atendimento e saí com orientações para manter os pés bem cuidados." },
-  { name: "Paciente · Estética facial", text: "Pude falar sobre manchas, textura e o que queria melhorar na pele. Recebi explicações claras sobre as possibilidades e sobre o que fazia sentido para mim." },
-  { name: "Paciente · Cuidado contínuo", text: "O atendimento foi atencioso do começo ao fim. Gostei de ter um plano pensado para minhas necessidades, com recomendações práticas para continuar o cuidado em casa." },
+  { name: "Mariana S.", text: "A avaliação da unha encravada foi feita com muito cuidado. Entendi cada etapa do atendimento e saí com orientações para manter os pés bem cuidados." },
+  { name: "Camila R.", text: "Pude falar sobre manchas, textura e o que queria melhorar na pele. Recebi explicações claras sobre as possibilidades e sobre o que fazia sentido para mim." },
+  { name: "Juliana M.", text: "O atendimento foi atencioso do começo ao fim. Gostei de ter um plano pensado para minhas necessidades, com recomendações práticas para continuar o cuidado em casa." },
 ];
 
 const gallery = [
