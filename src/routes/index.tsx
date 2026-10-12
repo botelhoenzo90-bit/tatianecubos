@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import tatiPortrait from "@/assets/tati-retrato.png.asset.json";
 import { clinicPhone, clinicWhatsapp } from "@/lib/clinic-contact";
-import { aestheticImages, podologyImages, resultImages } from "@/lib/procedure-images";
+import { aestheticImages, podologyImagesByService, resultImages } from "@/lib/procedure-images";
 import { credentialImages } from "@/lib/credential-images";
 
 const siteUrl = "https://tatianecubos.com.br";
@@ -183,7 +183,7 @@ function Index() {
       <section className="tc-section" id="podologia"><div className="tc-wrap">
         <div className="tc-section-head tc-section-head-row"><div><span className="tc-kicker">PODOLOGIA ESPECIALIZADA</span><h2>Tratamentos podológicos para <em>mais conforto e saúde.</em></h2></div><p>De unhas encravadas e calosidades à prevenção e aos cuidados com a pele: cada atendimento começa com uma avaliação cuidadosa e um plano adequado às suas necessidades.</p></div>
         
-        <div className="tc-conveyor tc-conveyor-podology"><div className="tc-conveyor-track">{[...podologyServices,...podologyServices].map((service,i)=>{const Icon=service.icon;return <article className="tc-service-card" key={service.title+"-"+i}><img className="tc-procedure-image" src={podologyImages[(i % podologyServices.length) % podologyImages.length]} alt={"Imagem ilustrativa de "+service.title.toLowerCase()} loading="lazy"/><div className="tc-procedure-copy"><h3>{service.title}</h3><p>{service.text}</p></div></article>})}</div></div>
+        <div className="tc-conveyor tc-conveyor-podology"><div className="tc-conveyor-track">{[...podologyServices,...podologyServices].map((service,i)=><article className="tc-service-card" key={service.title+"-"+i}><img className="tc-procedure-image" src={podologyImagesByService[service.title]} alt={"Imagem ilustrativa de "+service.title.toLowerCase()} loading="lazy"/><div className="tc-procedure-copy"><h3>{service.title}</h3><p>{service.text}</p></div></article>)}</div></div>
         
         <div className="tc-podology-cta"><Button variant="siteGold" size="site" onClick={() => book("Olá, Tati! Gostaria de agendar uma avaliação de podologia.")}>Agendar avaliação de podologia <ArrowRight size={17}/></Button></div>
       </div></section>
