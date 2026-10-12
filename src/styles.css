@@ -794,3 +794,27 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site .tc-footer a,.tc-site .tc-footer span,.tc-site .tc-footer p{overflow-wrap:anywhere}
 @media(max-width:850px){.tc-site .tc-wrap{width:calc(100% - 32px)}.tc-hero h1{font-size:clamp(35px,8vw,48px)}.tc-hero-copy{padding-inline:0!important}.tc-site .tc-products-grid,.tc-site .tc-about-grid{grid-template-columns:1fr!important}}
 @media(max-width:520px){.tc-site .tc-wrap{width:calc(100% - 28px)}.tc-conveyor .tc-aesthetic-card,.tc-conveyor .tc-service-card{width:260px;min-width:260px;max-width:260px;flex-basis:260px}.tc-reviews-conveyor .tc-review-feature{width:270px;min-width:270px;max-width:270px;flex-basis:270px}.tc-hero .tc-official-logo{width:min(285px,78vw)!important}.tc-hero h1{font-size:35px}.tc-hero-detail{font-size:14px!important}}
+
+
+/* Ajustes solicitados: primeira dobra, cards uniformes e contato */
+.tc-hero .tc-official-logo{width:min(285px,68vw)!important;max-height:125px!important}
+.tc-hero .tc-logo-placeholder{gap:12px!important;margin-bottom:18px!important}
+.tc-hero .tc-hero-region{margin:0 auto;color:#405a45;font-size:13px;line-height:1.7;letter-spacing:.025em;max-width:620px;text-align:center}
+.tc-hero h1{max-width:880px!important;margin:0 auto 24px!important;font-size:clamp(36px,4.8vw,61px)!important}
+.tc-hero .tc-hero-detail{max-width:760px!important;margin:0 auto 26px!important;font-size:clamp(16px,1.6vw,19px)!important;line-height:1.85!important;color:#405447!important}
+.tc-hero-proof{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px!important;max-width:1000px;margin:34px auto 0!important;border:0!important;padding:0!important}
+.tc-hero-proof article{min-width:0;min-height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px 12px;border:1px solid #d9dfcf;border-radius:16px;background:rgba(255,253,247,.88);text-align:center}
+.tc-hero-proof article strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(17px,1.8vw,23px);line-height:1.2;color:#183f2f}
+.tc-hero-proof article span{font-size:12px;line-height:1.5;color:#52634f}
+.tc-location-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:18px}
+.tc-location-card{height:100%;min-height:290px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 22px!important}
+.tc-location-card h3{min-height:2.3em;display:flex;align-items:center;justify-content:center}
+.tc-location-card p{flex:1;display:flex;align-items:center;justify-content:center;min-height:3.5em;line-height:1.7}
+.tc-location-card .tc-location-hours{min-height:24px;display:flex;align-items:center;justify-content:center}
+.tc-location-card>a{margin-top:14px}
+.tc-site #depoimentos .tc-review-author small{font-size:10px}
+.tc-contact-details>a>span{display:grid;place-items:center;flex-shrink:0;width:44px;height:44px;border-radius:50%;background:#e5eadc;color:#183f2f}
+.tc-contact-details>a>span svg{width:21px;height:21px;stroke-width:1.8}
+.tc-contact-details>a>svg:last-child{width:18px;height:18px;flex-shrink:0;color:#d5bc79}
+@media(max-width:850px){.tc-hero-proof{grid-template-columns:repeat(2,minmax(0,1fr))!important}.tc-location-grid{grid-template-columns:1fr!important}.tc-location-card{min-height:250px}}
+@media(max-width:520px){.tc-hero .tc-official-logo{width:min(250px,68vw)!important;max-height:110px!important}.tc-hero .tc-hero-region{font-size:12px}.tc-hero-proof article{min-height:100px;padding:14px 9px}.tc-hero-proof article span{font-size:11px}.tc-hero h1{font-size:34px!important}}
