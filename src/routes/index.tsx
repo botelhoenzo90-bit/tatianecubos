@@ -171,6 +171,22 @@ function Index() {
         </div>
       </div></section>
 
+      <section className="tc-section tc-credentials-section" id="formacao">
+        <div className="tc-wrap">
+          <div className="tc-section-head tc-section-head-center">
+            <span className="tc-kicker">FORMAÇÃO E QUALIFICAÇÕES</span>
+            <h2>Conhecimento que fortalece <em>cada cuidado.</em></h2>
+            <p>Conheça minha trajetória profissional, cursos e certificações. Este espaço reúne os certificados para você visualizar minha formação e as qualificações que complementam meu trabalho.</p>
+          </div>
+          <div className="tc-credentials-conveyor" aria-label="Carrossel de certificados e qualificações">
+            <div className="tc-credentials-track">{[1,2,3,4,5,6,1,2,3,4,5,6].map((n,i)=><article className="tc-credential-card" key={n+"-"+i}>
+              <div className="tc-credential-image"><img src={`/midia/certificado-${n}.jpg`} alt={`Certificado ou qualificação profissional ${n}`} loading="lazy" onError={e=>{e.currentTarget.style.display="none";e.currentTarget.parentElement?.classList.add("tc-credential-empty")}}/><div className="tc-credential-placeholder"><Award/><strong>Certificado {n}</strong><span>Adicione certificado-{n}.jpg em public/midia</span></div></div>
+              <div className="tc-credential-caption"><span>FORMAÇÃO PROFISSIONAL</span><h3>{n===1?"Podologia":n===2?"Biomedicina":`Curso e qualificação ${n-2}`}</h3></div>
+            </article>)}</div>
+          </div>
+        </div>
+      </section>
+
       <section className="tc-section tc-product-line" id="linha-propria"><div className="tc-wrap tc-product-line-grid"><div className="tc-product-line-copy"><span className="tc-kicker">LINHA EXCLUSIVA</span><h2>Cosméticos podológicos <em>Tati Cubos</em></h2><div className="tc-product-line-visual"><img src="/7d877015-9709-4f95-acb9-28200810ec0b.png" alt="Linha de cosméticos podológicos Tati Cubos" loading="lazy"/></div><p>Desenvolvi uma linha própria para hidratação, recuperação e proteção dos pés, com qualidade profissional. São os mesmos produtos que uso nos atendimentos — e que você pode levar para continuar o cuidado em casa.</p><div className="tc-product-benefits"><article><strong>Hidratação intensa</strong><p>Cremes e loções formulados para nutrição profunda.</p></article><article><strong>Recuperação</strong><p>Tratamentos restauradores para pés ressecados e fissurados.</p></article><article><strong>Proteção diária</strong><p>Produtos que mantêm a saúde da pele a longo prazo.</p></article></div><Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Gostaria de conhecer a linha exclusiva de cosméticos podológicos.")}>Conhecer os produtos <ArrowRight size={17}/></Button></div></div></section>
 
 
