@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 - Use imported Lovable Asset pointers for supplied photos so media stays CDN-hosted and replacements remain explicit.
+- Render both procedure categories with the shared ProcedureCard and explicit imported image lists, so imagery, disclosure, sizing and booking stay consistent.
 - Keep site presentation in the global stylesheet and site Button variants so spacing and interactions share one design system.
 - Use the shared siteGold Button variant for site action buttons and keep its shine in the global stylesheet, so all calls to action share one appearance without pulse effects.
 - Use the shared Embla-backed Carousel for the clinic photo gallery so arrow, keyboard and swipe navigation use the existing controls.
