@@ -1,12 +1,3 @@
-import podology1 from "@/assets/podology-procedure-1.jpg";
-import podology2 from "@/assets/podology-procedure-2.jpg";
-import podology3 from "@/assets/podology-procedure-3.jpg";
-import podology4 from "@/assets/podology-procedure-4.jpg";
-import podology5 from "@/assets/podology-procedure-5.jpg";
-import podology6 from "@/assets/podology-procedure-6.jpg";
-import podology7 from "@/assets/podology-procedure-7.jpg";
-import podology8 from "@/assets/podology-procedure-8.jpg";
-import podology9 from "@/assets/podology-procedure-9.jpg";
 import resultadoAbdomen3Sessoes from "@/assets/resultado-estetica-abdomen-3-sessoes.webp.asset.json";
 import resultadoAbdomen from "@/assets/resultado-estetica-abdomen.webp.asset.json";
 import resultadoCicatrizAcne from "@/assets/resultado-estetica-cicatriz-acne.webp.asset.json";
@@ -26,15 +17,23 @@ export const aestheticImages = [
 ];
 
 export const podologyImages = [
-  podology1,
-  podology2,
-  podology3,
-  podology4,
-  podology5,
-  podology6,
-  podology7,
-  podology8,
-  podology9,
+  "/P%C3%A9s%20Fedorentos%20com%20Bact%C3%A9rias%20Ilustradas.png",
+  "/Massagem%20Relaxante%20para%20os%20P%C3%A9s.png",
+  "/Imagem%20do%20ChatGPT%2012%20de%20out.%20de%202026%2C%2015_37_31.png",
+  "/Tratamento%20Podol%C3%B3gico%20Profissional%20no%20H%C3%A1lux.png",
+  "/Tratamento%20Profissional%20da%20Unha%20do%20P%C3%A9.png",
+  "/Imagem%20do%20ChatGPT%2012%20de%20out.%20de%202026%2C%2015_32_38.png",
+  "/Tratamento%20Podol%C3%B3gico%20em%20Spa%20Cl%C3%ADnico.png",
+  "/Imagem%20do%20ChatGPT%2012%20de%20out.%20de%202026%2C%2015_29_58.png",
+  "/Pedicure%20Cl%C3%ADnico%20com%20Tratamento%20do%20Calcanhar.png",
+  "/Pedicure%20Relaxante%20no%20Spa.png",
+  "/Aplica%C3%A7%C3%A3o%20de%20%C3%B3rtese%20no%20h%C3%A1lux.png",
+  "/Aplica%C3%A7%C3%A3o%20de%20%C3%B3rtese%20corretiva%20na%20unha%20%D7%90.png",
+  "/Tratamento%20Profissional%20de%20Unha%20Encravada.png",
+  "/Tratamento%20de%20Calo%20em%20Cl%C3%ADnica%20Podol%C3%B3gica.png",
+  "/Avalia%C3%A7%C3%A3o%20Podol%C3%B3gica%20com%20Cuidado%20Profissional.png",
+  "/Imagem%20do%20ChatGPT%2012%20de%20out.%20de%202026%2C%2015_39_14.png",
+  "/Exame%20Podol%C3%B3gico%20com%20Les%C3%B5es%20Cut%C3%A2neas.png",
 ];
 
 export type ResultTag = "PODOLOGIA" | "ESTÉTICA";
@@ -148,7 +147,6 @@ const aestheticResults: ResultImage[] = [
   },
 ];
 
-// Ordem fixa (igual no servidor e no navegador) que embaralha estética e podologia sem repetir.
 function seededShuffle<T>(items: T[], seed: number): T[] {
   const out = [...items];
   let state = seed;
