@@ -1,4 +1,5 @@
 ## Ajustes solicitados
+- [ ] Tati Cubos: retirar indicadores iniciais e numeração, renovar cards com imagens e textos, mover avaliações após Podologia, simplificar produtos e ajustar locais e agendamento.
 - [x] Clarear os fundos em bege, diferenciar Conhecer o processo, corrigir setas laterais e conferir SEO na prévia e no site publicado.
 - [x] Configurar e verificar SEO local, metadados, dados estruturados e sitemap na prévia.
 - [ ] Concluir verificação do Google Search Console e enviar sitemap — SEO e sitemap já publicados; falta uma propriedade verificada do site no Search Console.
