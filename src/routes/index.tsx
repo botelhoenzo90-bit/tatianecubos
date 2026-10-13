@@ -11,6 +11,7 @@ import tatiPortrait from "@/assets/tati-retrato.png.asset.json";
 import { clinicPhone, clinicWhatsapp } from "@/lib/clinic-contact";
 import { aestheticImages, podologyImagesByService, resultImages } from "@/lib/procedure-images";
 import { credentialImages } from "@/lib/credential-images";
+import { ProductLine } from "@/components/product-line";
 
 const siteUrl = "https://tatianecubos.com.br";
 const ogImage = "https://tatianecubos.lovable.app/og-image.jpg";
@@ -166,7 +167,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="tc-section tc-product-line" id="linha-propria"><div className="tc-wrap tc-product-line-grid"><div className="tc-product-line-copy"><span className="tc-kicker">LINHA EXCLUSIVA</span><h2>Cosméticos podológicos <em>Tati Cubos</em></h2><div className="tc-product-line-visual"><img src="/7d877015-9709-4f95-acb9-28200810ec0b.png" alt="Linha de cosméticos podológicos Tati Cubos" loading="lazy"/></div><p>Desenvolvi uma linha própria para hidratação, recuperação e proteção dos pés, com qualidade profissional. São os mesmos produtos que uso nos atendimentos — e que você pode levar para continuar o cuidado em casa.</p><div className="tc-product-benefits"><article><strong>Hidratação intensa</strong><p>Cremes e loções formulados para nutrição profunda.</p></article><article><strong>Recuperação</strong><p>Tratamentos restauradores para pés ressecados e fissurados.</p></article><article><strong>Proteção diária</strong><p>Produtos que mantêm a saúde da pele a longo prazo.</p></article></div><Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Gostaria de conhecer a linha exclusiva de cosméticos podológicos.")}>Conhecer os produtos <ArrowRight size={17}/></Button></div></div></section>
+      <section className="tc-section tc-product-line" id="linha-propria"><div className="tc-wrap tc-product-line-grid"><div className="tc-product-line-copy"><span className="tc-kicker">LINHA EXCLUSIVA</span><h2>Cosméticos podológicos <em>Tati Cubos</em></h2><div className="tc-product-line-visual"><img src="/7d877015-9709-4f95-acb9-28200810ec0b.png" alt="Linha de cosméticos podológicos Tati Cubos" loading="lazy"/></div><p>Uma linha própria para continuar o cuidado dos pés e das unhas em casa, com orientação profissional para cada necessidade.</p><Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Gostaria de conhecer a linha exclusiva de cosméticos podológicos.")}>Conhecer os produtos <ArrowRight size={17}/></Button></div><ProductLine onContact={book} /></div></section>
 
 
 
