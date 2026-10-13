@@ -12,7 +12,6 @@ export function ProductLine({ onContact }: { onContact: (message: string) => voi
           <strong>{product.heading}</strong>
           <p>{product.description}</p>
           <ul>{product.benefits.map(benefit => <li key={benefit}><Check size={17} aria-hidden="true" />{benefit}</li>)}</ul>
-          <details><summary>Cuidados e informações do produto</summary><p>{product.details}</p></details>
           <Button variant="siteGold" size="site" onClick={() => onContact(`Olá, Tati! Gostaria de saber mais sobre ${product.name} e a orientação de uso.`)}>Consultar produto <ArrowRight size={17} /></Button>
         </div>
       </article>)}
@@ -28,8 +27,6 @@ export function ProductLine({ onContact }: { onContact: (message: string) => voi
       <h3>Marca com pedido deferido no INPI</h3>
       <p>{brandProcess.name}</p>
       <p><strong>Processo {brandProcess.number}</strong> · Pedido deferido em {brandProcess.decisionOn}</p>
-      <p>{brandProcess.status}. O registro ainda não foi concedido.</p>
-      <details><summary>Detalhes do processo</summary><p>Depósito: {brandProcess.depositedOn} · Decisão nº {brandProcess.decisionNumber}. Marca de Produto/Serviço, apresentação mista, NCL(12): 35. Titular informado: 17.010.751 TATIANE APARECIDA CUBOS [BR/PR].</p><p>Dados fornecidos pela titular. O deferimento do pedido de marca não equivale à certificação de qualidade, segurança ou eficácia dos produtos.</p></details>
     </aside>
   </>;
 }
