@@ -19,3 +19,4 @@
 - Keep clinic phone display and WhatsApp destinations in the shared clinic-contact module so booking links cannot diverge from the displayed number.
 - Import existing procedure illustrations through the shared procedure-images module so both conveyors use project-managed media rather than unrelated remote stock images.
 - Associate podology illustrations by service name in the shared image module, not carousel index, so rearranging cards cannot mismatch their photos.
+- Keep exclusive-product media and brand-process facts in the shared product-line module, rendered by its focused section component, so product presentation and pending-registration status stay consistent.
