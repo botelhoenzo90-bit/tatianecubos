@@ -1,5 +1,5 @@
 ## Ajustes solicitados
-- [ ] Incluir certificado de Biomedicina, dois produtos com fotos e descrições, dois comparativos e nota do processo de marca.
+- [x] Incluir certificado de Biomedicina, dois produtos com fotos e descrições, dois comparativos e nota do processo de marca.
 - [x] Ajustar margens e leitura, foto de Tati, cards compactos, vídeo vertical, textos e posição do atendimento domiciliar.
 - [x] Colocar as 4 fotos reais de certificados no carrossel da seção Formação, com ampliação ao clicar.
 - [x] Misturar as fotos reais de estética (jato de plasma, manchas, cicatrizes, reparo do lobo da orelha) com as de podologia no carrossel de resultados, em ordem embaralhada e sem repetir.
