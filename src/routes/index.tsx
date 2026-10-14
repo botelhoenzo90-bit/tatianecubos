@@ -168,7 +168,22 @@ function Index() {
         </div>
       </section>
 
-      <section className="tc-section tc-product-line" id="linha-propria"><div className="tc-wrap tc-product-line-grid"><div className="tc-product-line-copy"><span className="tc-kicker">LINHA EXCLUSIVA</span><h2>Cosméticos podológicos <em>Tati Cubos</em></h2><div className="tc-product-line-visual"><img src="/7d877015-9709-4f95-acb9-28200810ec0b.png" alt="Linha de cosméticos podológicos Tati Cubos" loading="lazy"/></div><p>Uma linha própria para continuar o cuidado dos pés e das unhas em casa, com orientação profissional para cada necessidade.</p><Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Gostaria de conhecer a linha exclusiva de cosméticos podológicos.")}>Conhecer os produtos <ArrowRight size={17}/></Button></div><ProductLine onContact={book} /></div></section>
+      <section className="tc-section tc-product-line" id="linha-propria"><div className="tc-wrap tc-product-line-grid"><div className="tc-product-line-copy"><span className="tc-kicker">LINHA EXCLUSIVA</span><h2>Cosméticos podológicos <em>Tati Cubos</em></h2><div className="tc-product-line-visual"><img src="/7d877015-9709-4f95-acb9-28200810ec0b.png" alt="Linha de cosméticos podológicos Tati Cubos" loading="lazy"/></div><p>Uma linha própria para continuar o cuidado dos pés e das unhas em casa, com orientação profissional para cada necessidade.</p>
+          <div className="tc-exclusive-products tc-emollient-details">
+            <article className="tc-exclusive-product"><div className="tc-exclusive-product-copy">
+              <h3>Benefícios do emoliente líquido</h3>
+              <p>Produto destinado a auxiliar no amolecimento da pele espessada, facilitando o cuidado podológico de calosidades e regiões ressecadas. Os benefícios específicos devem ser confirmados no rótulo do produto.</p>
+            </div></article>
+            <article className="tc-exclusive-product"><div className="tc-exclusive-product-copy">
+              <h3>Modo de usar</h3>
+              <p>Para cutículas e calosidades, siga exclusivamente as instruções do rótulo quanto à quantidade, tempo de ação, remoção e necessidade de enxágue. Não foram informados aqui tempos ou formas de aplicação específicos.</p>
+            </div></article>
+            <article className="tc-exclusive-product"><div className="tc-exclusive-product-copy">
+              <h3>Recomendações importantes</h3>
+              <p>Use conforme as orientações do fabricante. Evite contato com os olhos e mucosas e não aplique sobre pele ferida ou irritada. Em caso de reação, suspenda o uso. Confira no rótulo as contraindicações e precauções específicas.</p>
+            </div></article>
+          </div>
+          <Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Gostaria de conhecer a linha exclusiva de cosméticos podológicos.")}>Conhecer os produtos <ArrowRight size={17}/></Button></div><ProductLine onContact={book} /></div></section>
 
 
 
