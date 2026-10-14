@@ -183,7 +183,7 @@ function Index() {
               <p>Use conforme as orientações do fabricante. Evite contato com os olhos e mucosas e não aplique sobre pele ferida ou irritada. Em caso de reação, suspenda o uso. Confira no rótulo as contraindicações e precauções específicas.</p>
             </div></article>
           </div>
-          <Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Gostaria de conhecer a linha exclusiva de cosméticos podológicos.")}>Conhecer os produtos <ArrowRight size={17}/></Button></div><ProductLine onContact={book} /></div></section>
+          <Button variant="siteGold" size="site" onClick={()=>book("Olá, Tati! Gostaria de conhecer a linha exclusiva de cosméticos podológicos.")}>Consultar produto <ArrowRight size={17}/></Button></div><ProductLine onContact={book} /></div></section>
 
 
 
