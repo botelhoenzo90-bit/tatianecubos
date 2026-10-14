@@ -1307,3 +1307,16 @@ footer .footer-bottom{border-color:#476b56!important}
 .tc-site .tc-brand-process h3{font-size:24px}
 .tc-site .tc-credential-image img{object-fit:contain!important}
 @media(max-width:650px){.tc-site .tc-exclusive-products,.tc-site .tc-product-results{grid-template-columns:minmax(0,1fr)}.tc-site .tc-exclusive-product-copy{padding:20px}.tc-site .tc-exclusive-product>img{max-height:340px}.tc-site .tc-exclusive-product-copy h3{font-size:26px}}
+
+
+/* Centraliza o terceiro card da linha de emoliente no desktop. */
+.tc-site .tc-emollient-details > .tc-exclusive-product:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, calc(50% - 12px));
+}
+@media (max-width: 640px) {
+  .tc-site .tc-emollient-details > .tc-exclusive-product:last-child {
+    width: 100%;
+  }
+}
